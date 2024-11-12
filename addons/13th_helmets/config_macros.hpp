@@ -15,7 +15,7 @@
 // NAME = user's name
 // MODEL = model of particular helmet variant (ess, etc, can be found at the file path on line 5)
 #define CUSTOM_INF(NAME,MODEL)                                      \
-class 13_hgu56_##NAME: 13_hgu56 {                                   \
+class 13_inf_helmet_##NAME: 13_inf_helmet {                              \
     scope = 2;                                                      \
     scopeArsenal = 2;                                               \
     author = "CAP";                                                 \
