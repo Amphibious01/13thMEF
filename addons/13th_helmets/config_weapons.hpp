@@ -7,17 +7,22 @@ class CfgWeapons {
     class rhsusf_hgu56p_visor_mask; 
     class rhsusf_cvc_alt_helmet; // base class for CVC
     class rhsusf_cvc_ess;
+    class HeadgearItem;
 
+    // infantry helmets
     class 13_inf_helmet: rhsusf_lwh_helmet_marpatd_headset {
         displayName = "[13] BASE INF HELMET (DONT USE)";
         author = "13th Mod Team";
         scope = 1;
         scopeArsenal = 1;
+        hiddenSelections [] = { "camo", "camo2" };
         hiddenSelectionsTextures[] = {
             "",
             ""
         };
     };
+
+    // hgu56s
     class 13_hgu56: rhsusf_hgu56p {
         displayName = "[13] BASE HGU56 HELMET (DONT USE)";
         author = "";
@@ -60,6 +65,7 @@ class CfgWeapons {
         };        
     };
 
+    // cvc / tanker helms
     class 13_cvc: rhsusf_cvc_alt_helmet {
         displayName = "[13] BASE CVC HELMET (DONT USE)";
         author = "";
@@ -81,8 +87,17 @@ class CfgWeapons {
 
     // END BASE CLASS DEFINITIONS
 
+    /*
+    CUSTOM_INF requires two inputs, the name AND the model, list of models is below;
+    lwh_wd 
+    lwh_wd_ess01 - blk
+    lwh_wd_headset 
+    lwh_wd_headset_2 - blk
+    */
+
     CUSTOM_HGU_MASK(Cap) // example, produces a custom HGU56 w/ mask
     CUSTOM_HGU_VISOR(Jello) // example where no patches are present
     CUSTOM_CVC(Michigan)
+    CUSTOM_INF(Mixer,lwh_wd)
 
 };
