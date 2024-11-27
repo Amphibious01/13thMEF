@@ -24,7 +24,8 @@ class CfgPatches
             "13_hgu56_visor_mask", // end base classes
             "13_hgu56_mask_Cap",
             "13_hgu56_visor_Jello",
-            "13_cvc_Michigan"
+            "13_cvc_Michigan",
+            "13th_inf_Mixer"
         };
         units[]={};
     };
