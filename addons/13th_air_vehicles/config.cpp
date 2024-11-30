@@ -58,15 +58,15 @@ class CfgVehicles {
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=2000;
+							minRange=0;
+							maxRange=4000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=2000;
+							minRange=0;
+							maxRange=4000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -102,15 +102,15 @@ class CfgVehicles {
 					{
 						class AirTarget
 						{
-							minRange=2000;
-							maxRange=2000;
+							minRange=0;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=2000;
-							maxRange=2000;
+							minRange=0;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -296,8 +296,8 @@ class CfgVehicles {
 		// giving it radar B)
 		LockDetectionSystem = "2+4+8";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
-		class Components: BaseComponents{
-			class TransportPylonsComponent
+		class components: BaseComponents{
+			class TransportPylonsComponent: TransportPylonsComponent
 			{
 				UIPicture="\CUP\AirVehicles\CUP_AirVehicles_UH60\data\ui\CUP_UH60M_4_3DEN_CA.paa";
 				class presets
@@ -538,6 +538,7 @@ class CfgVehicles {
 		};
     memoryPointDriverOptics = "commanderview";
     
+
     };
 
 
