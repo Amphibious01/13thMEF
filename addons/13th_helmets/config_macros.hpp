@@ -11,55 +11,66 @@
 #define HGU_PREFIX(NAME) [13th][HGU56] NAME
 #define CVC_PREFIX(NAME) [13th][CVC] NAME
 
+#define HELMETARMOR                             \
+class HitpointsProtectionInfo {                 \
+	class Head                                  \
+	{                                           \
+		hitpointName = "HitHead";               \
+		armor = 6;                              \
+		passThrough = 0.5;                      \
+	};                                          \
+};                                              \
 
 // NAME = user's name
 // MODEL = model of particular helmet variant (ess, etc, can be found at the file path on line 5)
-#define CUSTOM_INF(NAME,MODEL)                                      \
-class 13_inf_helmet_##NAME: 13_inf_helmet {                         \
-    scope = 2;                                                      \
-    scopeArsenal = 2;                                               \
-    author = "CAP";                                                 \
-    displayName = #INF_PREFIX(NAME);                                \
-    model = #LWHMODELPATH(MODEL);                                   \
-    hiddenSelections [] = { "camo", "camo2" };                          \
-    hiddenSelectionsTextures[] =                                    \
-    {                                                               \
-        #INFTEXPATH(NAME),                                          \
-        "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_d_co.paa"\
-    };                                                              \
-    class ItemInfo: HeadgearItem {                                  \
-        uniformModel = #LWHMODELPATH(MODEL);                        \
-        hiddenSelections [] = { "camo", "camo2" };                          \
-        hiddenSelectionsTextures[] =                                    \
-        {                                                               \
-            #INFTEXPATH(NAME),                                          \
-            "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_d_co.paa"\
-        };                                                              \
-    };                                                              \
-};                                                                  \
+#define CUSTOM_INF(NAME,MODEL)                                                   \
+class 13_inf_helmet_##NAME: 13_inf_helmet {                                      \
+    scope = 2;                                                                   \
+    scopeArsenal = 2;                                                            \
+    author = "CAP";                                                              \
+    displayName = #INF_PREFIX(NAME);                                             \
+    model = #LWHMODELPATH(MODEL);                                                \
+    hiddenSelections [] = { "camo", "camo2" };                                   \
+    hiddenSelectionsTextures[] =                                                 \
+    {                                                                            \
+        #INFTEXPATH(NAME),                                                       \
+        "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_d_co.paa"      \
+    };                                                                           \
+    class ItemInfo: HeadgearItem {                                               \
+        uniformModel = #LWHMODELPATH(MODEL);                                     \
+        hiddenSelections [] = { "camo", "camo2" };                               \
+        hiddenSelectionsTextures[] =                                             \
+        {                                                                        \
+            #INFTEXPATH(NAME),                                                   \
+            "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_d_co.paa"  \
+        };                                                                       \
+        HELMETARMOR                                                              \
+    };                                                                           \
+};                                                                               \
 
-#define CUSTOM_INF_BLK(NAME,MODEL)                                  \
-class 13_inf_helmet_##NAME: 13_inf_helmet {                         \
-    scope = 2;                                                      \
-    scopeArsenal = 2;                                               \
-    author = "CAP";                                                 \
-    displayName = #INF_PREFIX(NAME);                                \
-    model = #LWHMODELPATH(MODEL);                                   \
-    hiddenSelections [] = { "camo", "camo2" };                          \
-    hiddenSelectionsTextures[] =                                    \
-    {                                                               \
-        #INFTEXPATH(NAME),                                          \
-        "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_wd_co.paa"\
-    };                                                              \
-    class ItemInfo: HeadgearItem {                                  \
-        uniformModel = #LWHMODELPATH(MODEL);                        \
-        hiddenSelections [] = { "camo", "camo2" };                          \
-        hiddenSelectionsTextures[] =                                    \
-        {                                                               \
-            #INFTEXPATH(NAME),                                          \
-            "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_d_co.paa"\
-        };                                                              \
-    };                                                              \
+#define CUSTOM_INF_BLK(NAME,MODEL)                                                   \
+class 13_inf_helmet_##NAME: 13_inf_helmet {                                          \
+    scope = 2;                                                                       \
+    scopeArsenal = 2;                                                                \
+    author = "CAP";                                                                  \
+    displayName = #INF_PREFIX(NAME);                                                 \
+    model = #LWHMODELPATH(MODEL);                                                    \
+    hiddenSelections [] = { "camo", "camo2" };                                       \
+    hiddenSelectionsTextures[] =                                                     \
+    {                                                                                \
+        #INFTEXPATH(NAME),                                                           \
+        "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_wd_co.paa"         \
+    };                                                                               \
+    class ItemInfo: HeadgearItem {                                                   \
+        uniformModel = #LWHMODELPATH(MODEL);                                         \
+        hiddenSelections [] = { "camo", "camo2" };                                   \
+        hiddenSelectionsTextures[] =                                                 \
+        {                                                                            \
+            #INFTEXPATH(NAME),                                                       \
+            "\x\13thMEF\addons\13th_helmets\data\inf\defaults\lwh_acc_d_co.paa"      \
+        };                                                                           \
+        HELMETARMOR                                                                  \
+    };                                                                               \
 };            
 
 #define CUSTOM_HGU(NAME)                                            \

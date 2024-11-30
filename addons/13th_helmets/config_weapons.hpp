@@ -1,6 +1,6 @@
 
 class CfgWeapons {
-    class rhsusf_lwh_helmet_marpatd_headset; // base class for LWH helmet
+    class rhsusf_lwh_helmet_marpatd; // base class for LWH helmet
     class rhsusf_hgu56p; // base class for HGU56
     class rhsusf_hgu56p_mask; 
     class rhsusf_hgu56p_visor; 
@@ -10,7 +10,7 @@ class CfgWeapons {
     class HeadgearItem;
 
     // infantry helmets
-    class 13_inf_helmet: rhsusf_lwh_helmet_marpatd_headset {
+    class 13_inf_helmet: rhsusf_lwh_helmet_marpatd {
         displayName = "[13] BASE INF HELMET (DONT USE)";
         author = "13th Mod Team";
         scope = 1;
@@ -20,6 +20,12 @@ class CfgWeapons {
             "",
             ""
         };
+        class ItemInfo: ItemInfo
+	    {
+	    	mass = 40;
+	    	allowedSlots[] = {801,901,701,605};
+	    	modelSides[] = {6};
+	    };
     };
 
     // hgu56s
@@ -99,5 +105,9 @@ class CfgWeapons {
     CUSTOM_HGU_VISOR(Jello) // example where no patches are present
     CUSTOM_CVC(Michigan)
     CUSTOM_INF(Mixer,lwh_wd)
+    CUSTOM_INF(Lemming,lwh_wd)
+    CUSTOM_INF(Ouroboros,lwh_wd)
+    CUSTOM_INF(Salazar,lwh_wd)
+    CUSTOM_INF(Carver,lwh_wd)
 
 };
