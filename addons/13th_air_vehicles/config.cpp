@@ -307,39 +307,6 @@ class CfgVehicles {
 						displayName="$STR_EMPTY";
 						attachment[]={};
 					};
-					class AntiTank
-					{
-						displayName="$STR_A3_CFGMAGAZINES_TITAN_AT_DNS";
-						attachment[]=
-						{
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M"
-						};
-					};
-					class MultiRole
-					{
-						displayName="$STR_CUP_dn_Core_Pylon_Multirole";
-						attachment[]=
-						{
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M"
-						};
-					};
-					class Escort
-					{
-						displayName="$STR_CUP_dn_Core_Pylon_Escort";
-						attachment[]=
-						{
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M"
-						};
-					};
 				};
 				class pylons
 				{
@@ -349,12 +316,12 @@ class CfgVehicles {
 						{
 							"DAR",
 							"DAGR",
-							"B_SHRIEKER",
-							"CUP_NATO_HELO_SMALL",
-							"CUP_NATO_HELO_LARGE",
-							"CUP_NATO_HELO_UH60"
+							"RHS_HP_HELLFIRE_RACK",
+							"RHS_HP_FFAR_USMC",
+							"RHS_HP_ATAS",
+							"CUP_M789"
 						};
-						attachment="CUP_PylonPod_19Rnd_Rocket_FFAR_M";
+						attachment="rhs_mag_M151_19_green";
 						bay=-1;
 						priority=5;
 						UIposition[]={0.059999999,0.34999999};
@@ -536,10 +503,48 @@ class CfgVehicles {
             gunEnd = "gun_begin";
             memoryPointGun="gun_end";
 		};
-    memoryPointDriverOptics = "commanderview";
-    
+    	memoryPointDriverOptics = "commanderview";
+	
+		class Components: BaseComponents
+		{
+		class TransportPylonsComponent
+			{
+				UIPicture = "\rhsusf\addons\rhsusf_a2port_air2\data\loadouts\RHS_UH1_EDEN_CA.paa";
+				class pylons
+				{
+					class pylon1
+					{
+						hardpoints[] = 
+						{
+						"RHS_HP_ATAS",
+						"RHS_HP_FFAR_USMC",
+						"RHS_HP_LONGBOW_RACK",
+						"CUP_M789"
 
-    };
+						};
+						UIposition[]		= {0.573,0.44};
+						maxweight			= 1200;
+						priority			= 1;
+						attachment			= "rhs_mag_M151_7_green";
+						bay					= -1;
+					};
+					class pylon2 : pylon1
+					{
+						UIposition[]		= {0.10,0.44};
+						mirroredMissilePos	= 1;
+					};
+					class cmDispenser
+					{
+						hardpoints[]	= {"RHSUSF_cm_ANALE39","RHSUSF_cm_ANALE39_x2","RHSUSF_cm_ANALE39_x4"};
+						priority		= 1;
+						attachment		= "rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4";
+						maxweight		= 800;
+						UIposition[]	= {0.33,0.0};
+					};
+				};
+			};
+    	};
 
+	};
 
 };

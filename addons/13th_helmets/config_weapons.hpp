@@ -109,5 +109,7 @@ class CfgWeapons {
     CUSTOM_INF(Ouroboros,lwh_wd)
     CUSTOM_INF(Salazar,lwh_wd)
     CUSTOM_INF(Carver,lwh_wd)
+    CUSTOM_INF(Johnson,lwh_wd)
+    CUSTOM_INF(Xcom,lwh_wd)
 
 };
