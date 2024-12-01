@@ -27,7 +27,7 @@ class HitpointsProtectionInfo {                 \
 class 13_inf_helmet_##NAME: 13_inf_helmet {                                      \
     scope = 2;                                                                   \
     scopeArsenal = 2;                                                            \
-    author = "CAP";                                                              \
+    author = "TED";                                                              \
     displayName = #INF_PREFIX(NAME);                                             \
     model = #LWHMODELPATH(MODEL);                                                \
     hiddenSelections [] = { "camo", "camo2" };                                   \
@@ -52,7 +52,7 @@ class 13_inf_helmet_##NAME: 13_inf_helmet {                                     
 class 13_inf_helmet_##NAME: 13_inf_helmet {                                          \
     scope = 2;                                                                       \
     scopeArsenal = 2;                                                                \
-    author = "CAP";                                                                  \
+    author = "TED";                                                                  \
     displayName = #INF_PREFIX(NAME);                                                 \
     model = #LWHMODELPATH(MODEL);                                                    \
     hiddenSelections [] = { "camo", "camo2" };                                       \

@@ -111,5 +111,9 @@ class CfgWeapons {
     CUSTOM_INF(Carver,lwh_wd)
     CUSTOM_INF(Johnson,lwh_wd)
     CUSTOM_INF(Xcom,lwh_wd)
+    CUSTOM_INF(Ted,lwh_wd)
+    CUSTOM_INF(Random,lwh_wd)
+    CUSTOM_INF(Whiskey,lwh_wd)
+    CUSTOM_INF(Westerwald,lwh_wd)
 
 };
