@@ -1,0 +1,26 @@
+{
+    "compress": {
+        "exclude": [
+        ],
+        "include": [
+        ]
+    },
+    "headers": [
+        {
+            "name": "prefix",
+            "value": "x\\13thMEF\\addons\\13th_air_vehicles"
+        },
+        {
+            "name": "hemtt",
+            "value": "1.13.6"
+        },
+        {
+            "name": "version",
+            "value": "6.0.0.0"
+        },
+        {
+            "name": "git",
+            "value": "c852d84fcb720dec5d953e4ec6a9b1122dcad26c"
+        }
+    ]
+}
