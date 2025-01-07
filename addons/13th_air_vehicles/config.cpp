@@ -183,8 +183,10 @@ class CfgVehicles
 			};
 		};
 	};
+
+
 	class 13th_SH60: CUP_B_UH60S_USN
-	{
+		{
 		displayName="[13th] SH-60 Seahawk";
 		scopeCurator=2;
 		scope=2;
@@ -271,9 +273,11 @@ class CfgVehicles
 			gunEnd="gunnerview_flir";
 		};
 		memoryPointDriverOptics="gunnerview_flir";
-	};
+		};
+
+
 	class 13th_SH60S_DAP: CUP_B_MH60L_DAP_4x_US
-	{
+		{
 		displayName="[13th] SH-60S Knighthawk";
 		scopeCurator=2;
 		scope=2;
@@ -458,9 +462,11 @@ class CfgVehicles
 			gunEnd="gunnerview_flir";
 		};
 		memoryPointDriverOptics="gunnerview_flir";
-	};
+		};
+
+
 	class 13th_UH1Y: Osean_UH1Y
-	{
+		{
 		displayName="[13th] UH-1Y";
 		author="Waylen";
 		faction="b_oseamarinecorps";
@@ -589,6 +595,8 @@ class CfgVehicles
 						};
 					};
 				};
-    	};
-	};
+    		};
+
+		};
+		
 };
