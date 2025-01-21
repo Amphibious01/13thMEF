@@ -1,0 +1,1 @@
+_this setMass [1000,0]

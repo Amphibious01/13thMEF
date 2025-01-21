@@ -1,3 +1,5 @@
+#include "config_macros.hpp"
+
 class SensorTemplateActiveRadar;
 class SensorTemplateAntiRadiation;
 class SensorTemplateIR;
@@ -32,27 +34,35 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"rhsusf_a2port_air2",
-			"RHS_US_A2_AirImport"
+			"RHS_US_A2_AirImport",
+			"ojog_Helos"
 		};
 		units[]=
 		{
 			"13th_UH1Y",
 			"13th_SH60S_DAP",
-			"13th_SH60"
+			"13th_SH60",
+			"13th_MH6",
+			"13th_AH6",
+			"13th_AH1Z",
+			"13th_CH53E"
 		};
 	};
 };
 class CfgVehicles
 {
+	class Osean_MH6;
+	class Osean_AH6M;
 	class Osean_UH1Y;
 	class CUP_B_MH60L_DAP_4x_US;
 	class CUP_B_UH60S_USN;
 	class MainTurret;
+	class RHS_AH1Z;
+	class Osean_CH53_Gau21;
+
 	class BaseComponents: Components
 	{
-		class TransportCounterMeasuresComponent
-		{
-		};
+		class TransportCounterMeasuresComponent{};
 		class SensorsManagerComponent
 		{
 			class Components
@@ -183,8 +193,7 @@ class CfgVehicles
 			};
 		};
 	};
-
-
+	
 	class 13th_SH60: CUP_B_UH60S_USN
 		{
 		displayName="[13th] SH-60 Seahawk";
@@ -202,6 +211,22 @@ class CfgVehicles
 		{
 			"168Rnd_CMFlare_Chaff_Magazine"
 		};
+		class textureSources {
+			class default {
+				displayName = "Default";
+				author = "CUP";
+				textures[] = {
+					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_fuselage_co.paa",
+					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_engine_co.paa",
+					"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+				};
+				factions[] =
+				{
+					"Osea_F"
+				};
+			};
+		};
+
 		class Components: BaseComponents
 		{
 		};
@@ -273,6 +298,8 @@ class CfgVehicles
 			gunEnd="gunnerview_flir";
 		};
 		memoryPointDriverOptics="gunnerview_flir";
+
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,SH-60,Seahawk,0)
 		};
 
 
@@ -296,6 +323,24 @@ class CfgVehicles
 			"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_fuselage_co.paa",
 			"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_engine_co.paa",
 			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+		};
+		class textureSources 
+			{
+			class default 
+				{
+				displayName = "Default";
+				author = "CUP";
+				textures[] = 
+				{
+					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_fuselage_co.paa",
+					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_engine_co.paa",
+					"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+				};
+				factions[] =
+				{
+					"Osea_F"
+				};
+			};
 		};
 		LockDetectionSystem="2+4+8";
 		incomingMissileDetectionSystem="1+2+4+8+16";
@@ -351,12 +396,11 @@ class CfgVehicles
 					{
 						hardpoints[]=
 						{
-							"DAR",
-							"DAGR",
-							"B_SHRIEKER",
-							"CUP_NATO_HELO_SMALL",
-							"CUP_NATO_HELO_LARGE",
-							"CUP_NATO_HELO_UH60"
+							"RHS_HP_MELB",
+							"RHS_HP_MELB_L",
+							"RHS_HP_FFAR_ARMY",
+							"UNI_SCALPEL",
+							"CUP_M789"
 						};
 						attachment="CUP_PylonPod_19Rnd_Rocket_FFAR_M";
 						bay=-1;
@@ -462,6 +506,8 @@ class CfgVehicles
 			gunEnd="gunnerview_flir";
 		};
 		memoryPointDriverOptics="gunnerview_flir";
+
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,SH-60,Knighthawk,1)
 		};
 
 
@@ -597,6 +643,357 @@ class CfgVehicles
 				};
     		};
 
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,UH-1Y,Default,1)
 		};
+
+		class 13th_MH6: Osean_MH6 
+		{
+			displayName = "[13th] MH-6";
+			side = 1;
+			author="Waylen";
+			faction="b_oseamarinecorps";
+			crew="B_BOseaMarineCorps_Helicopter_pilot_01";
+			editorSubcategory  = "EdSubcat_Helicopters";
+			weapons[]=
+			{
+				"Laserdesignator_mounted",
+				"rhsusf_weap_LWIRCM"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM"
+			};
+			class pilotCamera
+			{
+				class OpticsIn
+				{
+					class Wide
+					{
+						opticsDisplayName="WFOV";
+						initAngleX=0;
+						minAngleX=-180;
+						maxAngleX=180;
+						initAngleY=0;
+						minAngleY=-90;
+						maxAngleY=20;
+						initFov="(30 / 120)";
+						minFov="(30 / 120)";
+						maxFov="(30 / 120)";
+						directionStabilized=1;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0,1};
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+						opticsPPEffects[]=
+						{
+							"OpticsCHAbera2",
+							"OpticsBlur2"
+						};
+					};
+					class Medium: Wide
+					{
+						opticsDisplayName="MFOV";
+						initFov="(6 / 120)";
+						minFov="(6 / 120)";
+						maxFov="(6 / 120)";
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
+					};
+					class Narrow: Wide
+					{
+						opticsDisplayName="NFOV";
+						initFov="(2 / 120)";
+						minFov="(2 / 120)";
+						maxFov="(2 / 120)";
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+					showMiniMapInOptics=0;
+					showUAVViewInOptics=0;
+					showSlingLoadManagerInOptics=0;
+				};
+				minTurn=-180;
+				maxTurn=180;
+				initTurn=0;
+				minElev=-80;
+				maxElev=90;
+				initElev=5;
+				maxXRotSpeed=1;
+				maxYRotSpeed=1;
+				maxMouseXRotSpeed=0.5;
+				maxMouseYRotSpeed=0.5;
+				pilotOpticsShowCursor=1;
+				controllable=1;
+				gunBeg="gun_end";
+				gunEnd="gun_begin";
+				memoryPointGun="gun_end";
+			};
+			memoryPointDriverOptics="commanderview";
+
+			LockDetectionSystem = "2+4+8";
+			incomingMissileDetectionSystem = "1+2+4+8+16";
+			class Components: BaseComponents {};
+			
+			SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-6,Transport,2)
+		};
+
+
+		class 13th_AH6: Osean_AH6M
+		{
+			displayName = "[13th] AH-6";
+			side = 1;
+			author="Waylen";
+			faction="b_oseamarinecorps";
+			crew="B_BOseaMarineCorps_Helicopter_pilot_01";
+			editorSubcategory  = "EdSubcat_Helicopters";
+			weapons[]=
+			{
+				"Laserdesignator_mounted",
+				"rhsusf_weap_LWIRCM"
+			};
+			magazines[]=
+			{
+				"Laserbatteries",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM",
+				"rhsusf_mag_LWIRCM"
+			};
+			class pilotCamera
+			{
+				class OpticsIn
+				{
+					class Wide
+					{
+						opticsDisplayName="WFOV";
+						initAngleX=0;
+						minAngleX=-180;
+						maxAngleX=180;
+						initAngleY=0;
+						minAngleY=-90;
+						maxAngleY=20;
+						initFov="(30 / 120)";
+						minFov="(30 / 120)";
+						maxFov="(30 / 120)";
+						directionStabilized=1;
+						visionMode[]=
+						{
+							"Normal",
+							"NVG",
+							"Ti"
+						};
+						thermalMode[]={0,1};
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+						opticsPPEffects[]=
+						{
+							"OpticsCHAbera2",
+							"OpticsBlur2"
+						};
+					};
+					class Medium: Wide
+					{
+						opticsDisplayName="MFOV";
+						initFov="(6 / 120)";
+						minFov="(6 / 120)";
+						maxFov="(6 / 120)";
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
+					};
+					class Narrow: Wide
+					{
+						opticsDisplayName="NFOV";
+						initFov="(2 / 120)";
+						minFov="(2 / 120)";
+						maxFov="(2 / 120)";
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+					showMiniMapInOptics=0;
+					showUAVViewInOptics=0;
+					showSlingLoadManagerInOptics=0;
+				};
+				minTurn=-180;
+				maxTurn=180;
+				initTurn=0;
+				minElev=-80;
+				maxElev=90;
+				initElev=5;
+				maxXRotSpeed=1;
+				maxYRotSpeed=1;
+				maxMouseXRotSpeed=0.5;
+				maxMouseYRotSpeed=0.5;
+				pilotOpticsShowCursor=1;
+				controllable=1;
+				gunBeg="gun_end";
+				gunEnd="gun_begin";
+				memoryPointGun="gun_end";
+			};
+			memoryPointDriverOptics="commanderview";
+
+			LockDetectionSystem = "2+4+8";
+			incomingMissileDetectionSystem = "1+2+4+8+16";
+			class Components: BaseComponents 
+			{	
+				class TransportPylonsComponent
+				{
+					UIPicture="\rhsusf\addons\rhsusf_melb\data\loadouts\RHS_AH6M_EDEN_CA.paa";
+					class pylons
+					{
+						class pylon1
+						{
+							hardpoints[]=
+							{
+								"RHS_HP_MELB",
+								"RHS_HP_MELB_L",
+								"RHS_HP_FFAR_ARMY"
+							};
+							priority=2;
+							attachment="rhs_mag_M151_7";
+							maxweight=1200;
+							UIposition[]={0.625,0.2};
+							bay=-1;
+							turret[]={};
+							hitpoint="HitPylon1";
+						};
+					class pylon2: pylon1
+					{
+						hardpoints[]=
+						{
+							"RHS_HP_MELB_M134",
+							"RHS_HP_MELB_L"
+						};
+						UIposition[]={0.56199998,0.30000001};
+						priority=1;
+						attachment="rhs_mag_m134_pylon_3000";
+						turret[]={};
+						hitpoint="HitPylon2";
+					};
+					class pylon3: pylon2
+					{
+						UIposition[]={0.103,0.30000001};
+						hardpoints[]=
+						{
+							"RHS_HP_MELB_M134",
+							"RHS_HP_ATAS"
+						};
+						mirroredMissilePos=2;
+						attachment="rhs_mag_m134_pylon_3000";
+						turret[]={};
+						hitpoint="HitPylon3";
+					};
+					class pylon4: pylon1
+						{
+							hardpoints[]=
+							{
+								"RHS_HP_MELB",
+								"RHS_HP_MELB_L",
+								"RHS_HP_FFAR_ARMY"
+							};
+							UIposition[]={0.039999999,0.2};
+							mirroredMissilePos=1;
+							turret[]={};
+							hitpoint="HitPylon4";
+						};
+					};
+					class Presets
+					{
+						class Default
+						{
+							attachment[]=
+							{
+								"rhs_mag_M151_7",
+								"rhs_mag_m134_pylon_3000",
+								"rhs_mag_m134_pylon_3000",
+								"rhs_mag_M151_7"
+							};
+							displayname="Default";
+						};
+					};
+				};
+			};
+			SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-6,Armed,2)
+		};
+
+	class 13th_CH53E: Osean_CH53_Gau21
+		{
+		displayName = "[13th] CH-53E";
+		side = 1;
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew="B_BOseaMarineCorps_Helicopter_pilot_01";
+		editorSubcategory  = "EdSubcat_Helicopters";
+		class Components: BaseComponents
+			{
+			class TransportPylonsComponent
+				{
+				UIPicture = "\rhsusf\addons\rhsusf_ch53\data\loadouts\RHS_CH53_EDEN_CA.paa";
+				class pylons
+					{
+					class cmDispenser
+						{
+						hardpoints[]	= {"RHSUSF_cm_ANALE39","RHSUSF_cm_ANALE39_x2"};
+						priority		= 1;
+						attachment		= "rhsusf_ANALE39_CMFlare_Chaff_Magazine_x2";
+						maxweight		= 800;
+						UIposition[]	= {0.33,0.0};
+					};
+				};
+			};
+		};
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,CH-53E,Default,3)
+	};
+	
+	class 13th_AH1Z: RHS_AH1Z 
+		{
+		displayName = "[13th] AH-1Z";
+		side = 1;
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew="B_BOseaMarineCorps_Helicopter_pilot_01";
+		editorSubcategory  = "EdSubcat_Helicopters";
+		hiddenSelectionsTextures[]=
+		{
+			"\ojog_Helos\data\ah1z_body_osea_co.paa",
+			"\rhsusf\addons\rhsusf_a2port_air2\ah1z\data\ah1z_engines_co.paa",
+			"#(argb,8,8,3)color(0,0,0,1.0,co)",
+			"#(argb,8,8,3)color(0,0,0,1.0,co)",
+			"#(argb,8,8,3)color(0,0,0,1.0,co)",
+			"#(argb,8,8,3)color(0,0,0,1.0,co)"
+		};
+		class textureSources
+		{
+			class OseaViper
+			{
+				displayName="Osean";
+				author="matheusgc02";
+				textures[]=
+				{
+					"\ojog_Helos\data\ah1z_body_osea_co.paa",
+					"\rhsusf\addons\rhsusf_a2port_air2\ah1z\data\ah1z_engines_co.paa"
+				};
+				factions[]=
+				{
+					"Osea_F"
+				};
+			};
+		};
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,AH-1Z,Default,1)
+	};
 		
 };

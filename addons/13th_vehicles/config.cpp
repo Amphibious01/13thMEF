@@ -136,7 +136,7 @@ class CfgVehicles {
         };
     };
 
-    class 13th_LAV25_M240: CUP_B_LAV25_USMC {
+    class 13th_LAV25_M240: CUP_B_LAV25M240_USMC {
         displayName = "[13th] LAV-25 (M240)";
         author = "Waylen";
         faction = "b_oseamarinecorps";
