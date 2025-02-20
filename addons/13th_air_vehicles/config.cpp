@@ -298,6 +298,8 @@ class CfgVehicles
 			gunEnd="gunnerview_flir";
 		};
 		memoryPointDriverOptics="gunnerview_flir";
+		lockDetectionSystem = "2+4+8";
+		incomingMissileDetectionSystem = "1+2+4+8+16";
 
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,SH-60,Seahawk,0)
 		};
@@ -342,8 +344,8 @@ class CfgVehicles
 				};
 			};
 		};
-		LockDetectionSystem="2+4+8";
-		incomingMissileDetectionSystem="1+2+4+8+16";
+		lockDetectionSystem = "2+4+8";
+		incomingMissileDetectionSystem = "1+2+4+8+16";
 		class components: BaseComponents
 		{
 			class TransportPylonsComponent
@@ -595,7 +597,7 @@ class CfgVehicles
 		};
 		memoryPointDriverOptics="commanderview";
 
-		LockDetectionSystem = "2+4+8";
+		lockDetectionSystem = "2+4+8";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
 		class Components: BaseComponents
 			{
@@ -742,7 +744,7 @@ class CfgVehicles
 			};
 			memoryPointDriverOptics="commanderview";
 
-			LockDetectionSystem = "2+4+8";
+			lockDetectionSystem = "2+4+8";
 			incomingMissileDetectionSystem = "1+2+4+8+16";
 			class Components: BaseComponents {};
 			
@@ -846,7 +848,7 @@ class CfgVehicles
 			};
 			memoryPointDriverOptics="commanderview";
 
-			LockDetectionSystem = "2+4+8";
+			lockDetectionSystem = "2+4+8";
 			incomingMissileDetectionSystem = "1+2+4+8+16";
 			class Components: BaseComponents 
 			{	
@@ -956,6 +958,9 @@ class CfgVehicles
 				};
 			};
 		};
+
+		lockDetectionSystem = "2+4+8";
+		incomingMissileDetectionSystem = "1+2+4+8+16";
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,CH-53E,Default,3)
 	};
 	
@@ -993,7 +998,10 @@ class CfgVehicles
 				};
 			};
 		};
+
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,AH-1Z,Default,1)
+		lockDetectionSystem = "2+4+8";
+		incomingMissileDetectionSystem = "1+2+4+8+16";
 	};
 		
 };
