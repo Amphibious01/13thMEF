@@ -1,3 +1,5 @@
+#include "config_macros.hpp"
+
 class CfgPatches
 {
 	class 13th_supply
@@ -187,8 +189,10 @@ class CfgVehicles
 			};
 		};
 
-        LOGI_SP_INFO(Crates, Supply Crate, 0)
+        LOGI_SP_INFO(Crates,Supply Crate,0)
 	};
+
+
 	class 13th_R3_crate: Box_NATO_AmmoVeh_F
 	{
 		displayName="[13th] R3 Crate";
@@ -222,6 +226,8 @@ class CfgVehicles
 
         LOGI_SP_INFO(Crates,R3 Crate Crate,0)
 	};
+
+
 	class 13th_arsenal_crate: B_supplyCrate_f
 	{
 		displayName="[13th] Arsenal Crate";
@@ -244,6 +250,8 @@ class CfgVehicles
         LOGI_SP_INFO(Crates,Arsenal Crate,0)
 
 	};
+
+
 	class 13th_Tractor: CUP_B_TowingTractor_USMC
 	{
 		displayName="[13th] Towing Tractor";
@@ -252,13 +260,15 @@ class CfgVehicles
 
         LOGI_SP_INFO(Towing Tractor,Default,1)
 	};
+
+
 	class 13th_R3HEMTT: B_Truck_01_box_F
 	{
 		displayName="[13th] R3 HEMTT";
 		author="Waylen";
 		faction="b_oseamarinecorps";
 		ace_repair_canRepair=1;
-		ace_rearm_defaultSupply=999999;
+		ace_rearm_defaultSupply=99999999;
 		ace_refuel_fuelCargo=10000;
 		ace_refuel_hooks[]=
 		{

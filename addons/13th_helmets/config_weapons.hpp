@@ -1,6 +1,10 @@
 
 class CfgWeapons {
-    class rhsusf_lwh_helmet_marpatd; // base class for LWH helmet
+    class Item_Base_F;
+    class rhsusf_lwh_helmet_marpatd: Item_Base_F // base class for LWH helmet
+    {
+        class ItemInfo;
+    }; 
     class rhsusf_hgu56p; // base class for HGU56
     class rhsusf_hgu56p_mask; 
     class rhsusf_hgu56p_visor; 

@@ -60,6 +60,7 @@ class CfgVehicles
 	class RHS_AH1Z;
 	class Osean_CH53_Gau21;
 
+	class Components;
 	class BaseComponents: Components
 	{
 		class TransportCounterMeasuresComponent{};
