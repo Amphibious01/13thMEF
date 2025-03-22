@@ -121,5 +121,7 @@ class CfgWeapons {
     CUSTOM_INF(Westerwald,lwh_wd)
     CUSTOM_INF(Hollow,lwh_wd)
     CUSTOM_INF(Psy,lwh_wd)
-
+    CUSTOM_INF(Q,lwh_wd)
+    CUSTOM_INF(Oliver,lwh_wd)
+    CUSTOM_INF(Boomer,lwh_wd)
 };
