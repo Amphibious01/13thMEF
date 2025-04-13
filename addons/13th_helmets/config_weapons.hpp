@@ -124,4 +124,5 @@ class CfgWeapons {
     CUSTOM_INF(Q,lwh_wd)
     CUSTOM_INF(Oliver,lwh_wd)
     CUSTOM_INF(Boomer,lwh_wd)
+    CUSTOM_INF(Markus,lwh_wd)
 };
