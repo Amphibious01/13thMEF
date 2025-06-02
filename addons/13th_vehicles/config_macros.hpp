@@ -53,8 +53,6 @@ class TransportBackpacks{};
 class TransportMagazines {                                                                                                    \
     class _xx_rhs_mag_30Rnd_556x45_M855A1_Stanag { magazine = "rhs_mag_30Rnd_556x45_M855A1_Stanag"; count = 10;};             \
     class _xx_CUP_SMAW_NE_M { magazine = "CUP_SMAW_NE_M"; count = 5;};                                                        \
-    class _xx_SmokeShell { weapon = "SmokeShell"; count = 8;};                                                                \
-    class _xx_SmokeShellYellow { weapon = "SmokeShellYellow"; count = 8;};                                                    \
 };                                                                                                                            \
 class TransportWeapons {                                                                                                      \
     class _xx_rhs_weap_M136 { weapon = "rhs_weap_M136"; count = 6;};                                                          \

@@ -13,12 +13,16 @@ class CfgPatches
 			"rhsusf_c_m11xx",
 			"rhsusf_c_stryker",
 			"CUP_WheeledVehicles_Stryker",
-			"CUP_TrackedVehicles_AAV"
+			"CUP_TrackedVehicles_AAV",
+			"rhsusf_c_hmmwv",
+			"cba_main",
+      		"ace_main",
 		};
 		units[]=
 		{
 			"13th_LAV25",
 			"13th_LAV25_M240",
+			"13th_LAV25_C2",
 			"13th_SUPERLAV25",
 			"13th_kitty_car",
 			"13th_M1126_M2",
@@ -26,7 +30,14 @@ class CfgPatches
 			"13th_M1128_MGS",
 			"13th_M1132",
 			"13th_AAV",
-			"13th_M1165A1"
+			"13th_M1165A1",
+			"13th_M1151_M2",
+			"13th_M1151_M240",
+			"13th_M1151",
+			"13th_M998",
+			"13th_M1043",
+			"13th_M1043_M2",
+			"13th_M1045"
 		};
 	};
 };
@@ -41,6 +52,11 @@ class CfgVehicles
 		class CommanderOptics;
 		class CargoGunner_1;
 		class CargoGunner_2;
+		class HitPoints;
+	};
+	class CUP_B_LAV25_HQ_USMC: CUP_B_LAV25_USMC
+	{
+		class AnimationSources;
 	};
 
 	class CUP_AAV_BASE;
@@ -48,6 +64,28 @@ class CfgVehicles
 	{
 		class Wheels;
 		class L2;
+	};
+
+	class rhsusf_m1151_m2_v3_usmc_wd;
+	class rhsusf_m1151_m240_v3_usmc_wd;
+	class rhsusf_m1151_usmc_wd;
+	class rhsusf_m998_w_4dr;
+
+	class rhsusf_m1045_w;
+	class rhsusf_m1043_w_m2;
+	class rhsusf_m1025_w;
+
+	class rhsusf_m1045_w_s: rhsusf_m1045_w
+	{
+		class AnimationSources;
+	};
+	class rhsusf_m1043_w_s: rhsusf_m1025_w
+	{
+		class AnimationSources;
+	};
+	class rhsusf_m1043_w_s_m2: rhsusf_m1043_w_m2
+	{
+		class AnimationSources;
 	};
 
 	class rhsusf_M1165A1_GMV_SAG2_M134D_M240_base;
@@ -391,11 +429,23 @@ class CfgVehicles
 			reverseString="R";
 		};
 
-		class EventHandlers: EventHandlers
-		{
-			postInit="(_this select 0) execVM ""\x\13thMEF\addons\13th_vehicles\obstacle_clearing.sqf""";
-		};
+		//class EventHandlers: EventHandlers
+		//{
+		//	postInit="(_this select 0) execVM ""\x\13thMEF\addons\13th_vehicles\obstacle_clearing.sqf""";
+		//};
 		
+		class ace_cargo
+		{
+			class cargo
+			{
+				class ACE_Wheel
+				{
+					type="FlexibleTank_01_forest_F";
+					amount=2;
+				};
+			};
+		};
+
 		KICKERINVENTORY
 
 		GROUND_SP_INFO(M1126 Stryker,M1132 w/ Plow,1,0)
@@ -455,6 +505,18 @@ class CfgVehicles
 
 		KICKERINVENTORY
 
+		class ace_cargo
+		{
+			class cargo
+			{
+				class ACE_Wheel
+				{
+					type="FlexibleTank_01_forest_F";
+					amount=2;
+				};
+			};
+		};
+
 		GROUND_SP_INFO(M1126 Stryker,M2,1,0)
 	};
 
@@ -472,8 +534,8 @@ class CfgVehicles
 		enginePower=5000;
 		hiddenSelectionsTextures[]=
 		{
-			"\x\13thMEF\addons\13th_vehicles\data\lav_body_co.paa",
-			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lavbody2_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\lav25_body_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\lav25_body2_co.paa",
 			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lav_hq_co.paa",
 			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lavalfa_ca.paa"
 		};
@@ -486,7 +548,7 @@ class CfgVehicles
 			{
 				class ACE_Wheel
 				{
-					type="ACE_Wheel";
+					type="Land_CanisterFuel_F";
 					amount=6;
 				};
 			};
@@ -524,6 +586,7 @@ class CfgVehicles
 
 		GROUND_SP_INFO(LAV-25,Default,2,0)
 	};
+
 	class 13th_LAV25_M240: CUP_B_LAV25_USMC
 	{
 		displayName="[13th] LAV-25 (M240)";
@@ -534,8 +597,8 @@ class CfgVehicles
 		picture="\cup\wheeledvehicles\cup_wheeledvehicles_lav25\Data\UI\Picture_LAV25m240_CA.paa";
 		hiddenSelectionsTextures[]=
 		{
-			"\x\13thMEF\addons\13th_vehicles\data\lav_body_co.paa",
-			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lavbody2_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\lav25_body_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\lav25_body2_co.paa",
 			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lav_hq_co.paa",
 			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lavalfa_ca.paa"
 		};
@@ -554,17 +617,38 @@ class CfgVehicles
 			{
 				class ACE_Wheel
 				{
-					type="ACE_Wheel";
+					type="Land_CanisterFuel_F";
 					amount=6;
 				};
 			};
 		};
+
 		cargoCompartments[]=
 		{
 			"Compartment3"
 		};
+
 		class AnimationSources: AnimationSources
 		{
+			class Hide_Deployment
+			{
+				DisplayName="$STR_CUP_dn_Core_as_Hide_Deployment";
+				source="user";
+				animPeriod=0;
+				initPhase=0;
+			};
+			class Hide_Turret_Deployment: Hide_Deployment
+			{
+				DisplayName="$STR_CUP_dn_Core_as_Hide_Turret_Deployment";
+				initPhase=0;
+			};
+			class Hide_Antenna
+			{
+				DisplayName="$STR_CUP_dn_Core_as_Hide_Antenna";
+				source="user";
+				animPeriod=0;
+				initPhase=0;
+			};
 			class recoil_source
 			{
 				source="reload";
@@ -591,6 +675,7 @@ class CfgVehicles
 				weapon="CUP_Vlmg_M240_veh3";
 			};
 		};
+
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -697,11 +782,80 @@ class CfgVehicles
 			{
 			};
 		};
+
+
+
 		AGM_FCSEnabled=1;
 		editorPreview="CUP\WheeledVehicles\CUP_WheeledVehicles_LAV25\Data\preview\CUP_B_LAV25M240_USMC.jpg";
 		HIGHROLLERINVENTORY
 
 		GROUND_SP_INFO(LAV-25,M240,2,0)
+
+	};
+
+	class 13th_LAV25_C2: CUP_B_LAV25_HQ_USMC
+	{
+		displayName="[13th] LAV-25 C2";
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Crewman_01";
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"Camo3",
+			"camoAlfa"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\x\13thMEF\addons\13th_vehicles\data\lav25_c2_body_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\lav25_body2_co.paa",
+			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lav_hq_co.paa",
+			"\cup\wheeledvehicles\cup_wheeledvehicles_lav25\data\lavalfa_ca.paa"
+		};
+		waterResistenceCoef=0.0049999999;
+		waterResistance=0.1;
+		waterAngularDampingCoef=3;
+		engineShiftY=1;
+		peakTorque=1500;
+		enginePower=5000;		
+
+		class AnimationSources: AnimationSources
+		{
+			class Hide_Deployment
+				{
+					DisplayName="$STR_CUP_dn_Core_as_Hide_Deployment";
+					source="user";
+					animPeriod=0;
+					initPhase=0;
+				};
+				class Hide_Turret_Deployment: Hide_Deployment
+				{
+					DisplayName="$STR_CUP_dn_Core_as_Hide_Turret_Deployment";
+					initPhase=1;
+				};
+				class Hide_Antenna
+				{
+					DisplayName="$STR_CUP_dn_Core_as_Hide_Antenna";
+					source="user";
+					animPeriod=0;
+					initPhase=0;
+				};
+		};
+
+		class ace_cargo
+		{
+			class cargo
+			{
+				class ACE_Wheel
+				{
+					type="Land_CanisterFuel_F";
+					amount=2;
+				};
+			};
+		};
+
+		BASICINV
 
 	};
 
@@ -733,4 +887,376 @@ class CfgVehicles
 		HIGHROLLERINVENTORY
 
 	};
+
+	class 13th_M1151_M2: rhsusf_m1151_m2_v3_usmc_wd
+	{
+		displayName="[13th] M1151 HMMVW (M2)";
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		BASICINV
+
+		hiddenSelections [] = {
+			"camo",
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo19",
+		};
+		HiddenSelectionsTextures[]=
+		{
+			"\x\13thMEF\addons\13th_vehicles\data\m1151_body_co.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Tire_wd_CO.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Int_wd_CO.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Acc_wd_CO.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1152M1165_wd_CO.paa",
+			"rhsusf\addons\rhsusf_rg33l\data\mctags_wd_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+			"rhsusf\addons\rhsusf_m1165\data\rhsusf_m11165a1_gmv_h246mount_wd_co.paa"
+		};
+		class textureSources {
+			class rhs_woodland
+			{
+				displayName="Woodland";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"\x\13thMEF\addons\13th_vehicles\data\m1151_body_co.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Tire_wd_CO.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Int_wd_CO.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Acc_wd_CO.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1152M1165_wd_CO.paa",
+					"rhsusf\addons\rhsusf_rg33l\data\mctags_wd_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+					"rhsusf\addons\rhsusf_m1165\data\rhsusf_m11165a1_gmv_h246mount_wd_co.paa"
+				};
+				decals[]={8};
+				factions[]={};
+			};
+		};
+		
+	};
+
+	class 13th_M1151_M240: rhsusf_m1151_m240_v3_usmc_wd
+	{
+		displayName="[13th] M1151 HMMVW (M240)";
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		BASICINV
+
+		hiddenSelections [] = {
+			"camo",
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo19",
+		};
+		HiddenSelectionsTextures[]=
+		{
+			"\x\13thMEF\addons\13th_vehicles\data\m1151_body_co.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Tire_wd_CO.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Int_wd_CO.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Acc_wd_CO.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1152M1165_wd_CO.paa",
+			"rhsusf\addons\rhsusf_rg33l\data\mctags_wd_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+			"rhsusf\addons\rhsusf_m1165\data\rhsusf_m11165a1_gmv_h246mount_wd_co.paa"
+		};
+		class textureSources {
+			class rhs_woodland
+			{
+				displayName="Woodland";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"\x\13thMEF\addons\13th_vehicles\data\m1151_body_co.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Tire_wd_CO.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Int_wd_CO.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Acc_wd_CO.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1152M1165_wd_CO.paa",
+					"rhsusf\addons\rhsusf_rg33l\data\mctags_wd_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+					"rhsusf\addons\rhsusf_m1165\data\rhsusf_m11165a1_gmv_h246mount_wd_co.paa"
+				};
+				decals[]={8};
+				factions[]={};
+			};
+		};
+
+	};
+
+	class 13th_M1151: rhsusf_m1151_usmc_wd
+	{
+		displayName="[13th] M1151 HMMVW";
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		BASICINV
+
+		hiddenSelections [] = {
+			"camo",
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6"
+		};
+		HiddenSelectionsTextures[]=
+		{
+			"\x\13thMEF\addons\13th_vehicles\data\m1151_body_co.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Tire_wd_CO.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Int_wd_CO.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Acc_wd_CO.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+			"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1152M1165_wd_CO.paa"
+		};
+		class textureSources {
+			class rhs_woodland
+			{
+				displayName="Woodland";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"\x\13thMEF\addons\13th_vehicles\data\m1151_body_co.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Tire_wd_CO.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Int_wd_CO.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1151_Acc_wd_CO.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+					"rhsusf\addons\rhsusf_m11xx\data\rhsusf_M1152M1165_wd_CO.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_w_co.paa"
+				};
+				decals[]={8};
+				factions[]={};
+			};
+		};
+
+	};
+
+	class 13th_M998: rhsusf_m998_w_4dr
+	{
+		displayName="[13th] M998 HMMVW";
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		BASICINV	
+	};
+
+	class 13th_M1043_M2: rhsusf_m1043_w_s_m2
+	{
+		displayName = "[13th] M1043 HMMVW (M2)";
+		author = "Waylen";
+		faction = "b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		HiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\m1043_base_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\humvee_decals.paa",
+			""
+		};
+		class textureSources
+		{
+			class standard
+			{
+				displayName="Woodland";
+				author="13th MEF";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+					"\x\13thMEF\addons\13th_vehicles\data\m1043_base_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa"
+				};
+				factions[]=
+				{
+					"b_oseamarinecorps"
+				};
+			};
+		};
+
+		BASICINV
+		class AnimationSources: AnimationSources 
+		{
+			class hide_snorkel: hide_snorkel
+			{
+				initPhase = 1;
+			};
+			class hide_CIP: hide_CIP
+			{
+				initPhase = 1;
+			};
+			class hide_BFT: hide_BFT
+			{
+				initPhase = 1;
+			};
+		};
+	};
+	
+	class 13th_M1043: rhsusf_m1043_w_s
+	{
+		displayName = "[13th] M1043 HMMVW";
+		author = "Waylen";
+		faction = "b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		HiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\m1043_base_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\humvee_decals.paa",
+			""
+		};
+		class textureSources
+		{
+			class standard
+			{
+				displayName="Woodland";
+				author="13th MEF";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+					"\x\13thMEF\addons\13th_vehicles\data\m1043_base_co.paa",
+				};
+				factions[]=
+				{
+					"b_oseamarinecorps"
+				};
+			};
+		};
+
+		BASICINV
+		class AnimationSources: AnimationSources 
+		{
+			class hide_snorkel: hide_snorkel
+			{
+				initPhase = 1;
+			};
+			class hide_CIP: hide_CIP
+			{
+				initPhase = 1;
+			};
+			class hide_BFT: hide_BFT
+			{
+				initPhase = 1;
+			};
+		};
+	};
+
+	class 13th_M1045: rhsusf_m1045_w_s
+	{
+		displayName = "[13th] M1045A2 HMMVW (TOW)";
+		author = "Waylen";
+		faction = "b_oseamarinecorps";
+		crew = "B_BOseaMarineCorps_Rifleman_01";
+
+		HiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+			"\x\13thMEF\addons\13th_vehicles\data\m1043_base_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+			"rhsusf\addons\rhsusf_hmmwv\unitdecals\101stab_502reg_2ndbn_a12_w_co.paa",
+			""
+		};
+		class textureSources
+		{
+			class standard
+			{
+				displayName="Woodland";
+				author="13th MEF";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
+					"\x\13thMEF\addons\13th_vehicles\data\m1043_base_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\unitdecals\101stab_502reg_2ndbn_a12_w_co.paa",
+					""
+				};
+				factions[]=
+				{
+					"b_oseamarinecorps"
+				};
+			};
+		};
+
+		BASICINV
+		class AnimationSources: AnimationSources 
+		{
+			class hide_snorkel: hide_snorkel
+			{
+				initPhase = 1;
+			};
+			class hide_CIP: hide_CIP
+			{
+				initPhase = 1;
+			};
+			class hide_BFT: hide_BFT
+			{
+				initPhase = 1;
+			};
+		};
+	};
+
 };

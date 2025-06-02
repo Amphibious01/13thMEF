@@ -40,8 +40,8 @@ class CfgPatches
 		units[]=
 		{
 			"13th_UH1Y",
-			"13th_SH60S_DAP",
-			"13th_SH60",
+			"13th_MH60S_DAP",
+			"13th_MH60",
 			"13th_MH6",
 			"13th_AH6",
 			"13th_AH1Z",
@@ -57,7 +57,15 @@ class CfgVehicles
 	class CUP_B_MH60L_DAP_4x_US;
 	class CUP_B_UH60S_USN;
 	class MainTurret;
-	class RHS_AH1Z;
+	class RHS_AH1Z_base;
+	class RHS_AH1Z:RHS_AH1Z_base
+	{
+		class Turrets;
+		class MainTurret;
+		class Wide;
+		class Medium;
+		class Narrow;
+	};
 	class Osean_CH53_Gau21;
 
 	class Components;
@@ -195,9 +203,9 @@ class CfgVehicles
 		};
 	};
 	
-	class 13th_SH60: CUP_B_UH60S_USN
+	class 13th_MH60: CUP_B_UH60S_USN
 		{
-		displayName="[13th] SH-60 Seahawk";
+		displayName="[13th] MH-60 Seahawk";
 		scopeCurator=2;
 		scope=2;
 		author="Waylen";
@@ -302,13 +310,13 @@ class CfgVehicles
 		lockDetectionSystem = "2+4+8";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
 
-		SPAWNPADCONFIG(13th_rotary,13th Rotary,SH-60,Seahawk,0)
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-60,Seahawk,0)
 		};
 
 
-	class 13th_SH60S_DAP: CUP_B_MH60L_DAP_4x_US
+	class 13th_MH60S_DAP: CUP_B_MH60L_DAP_4x_US
 		{
-		displayName="[13th] SH-60S Knighthawk";
+		displayName="[13th] MH-60S Knighthawk";
 		scopeCurator=2;
 		scope=2;
 		author="Waylen";
@@ -510,7 +518,7 @@ class CfgVehicles
 		};
 		memoryPointDriverOptics="gunnerview_flir";
 
-		SPAWNPADCONFIG(13th_rotary,13th Rotary,SH-60,Knighthawk,1)
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-60,Knighthawk,1)
 		};
 
 
@@ -996,6 +1004,59 @@ class CfgVehicles
 				factions[]=
 				{
 					"Osea_F"
+				};
+			};
+		};
+
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				minElev=-85;
+				maxElev=20;
+				minTurn=-108;
+				maxTurn=108;
+				gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+				class OpticsIn
+				{
+					class Wide
+					{
+						opticsDisplayName="W";
+						initAngleX=0;
+						minAngleX=-30;
+						maxAngleX=30;
+						initAngleY=0;
+						minAngleY=-120;
+						maxAngleY=120;
+						initFov=0.456;
+						minFov=0.456;
+						maxFov=0.456;
+						directionStabilized=0;
+						visionMode[]=
+						{
+							"Normal",
+							"Ti"
+						};
+						thermalMode[]={0,1};
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+					class Medium: Wide
+					{
+						directionStabilized=0;
+						opticsDisplayName="M";
+						initFov=0.093000002;
+						minFov=0.093000002;
+						maxFov=0.093000002;
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+					class Narrow: Medium
+					{
+						opticsDisplayName="N";
+						gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+						initFov=0.028999999;
+						minFov=0.028999999;
+						maxFov=0.028999999;
+					};					
 				};
 			};
 		};
