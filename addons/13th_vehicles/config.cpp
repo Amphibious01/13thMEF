@@ -105,12 +105,16 @@ class CfgVehicles
 
 	class CUP_C_Golf4_kitty_Civ;
 
-	class rhsusf_stryker_m1126_m2_wd;
 	class CUP_B_M1128_MGS_Woodland;
 	class rhsusf_stryker_m1126_m2_base;
+	class rhsusf_stryker_m1126_m2_wd: rhsusf_stryker_m1126_m2_base
+	{
+		class AnimationSources;
+	};
 	class rhsusf_stryker_m1132_m2_base: rhsusf_stryker_m1126_m2_base
 	{
 		class EventHandlers;
+		class AnimationSources;
 	};
 
 
@@ -387,6 +391,14 @@ class CfgVehicles
 		peakTorque = 2450;
 		dampingRateDamaged = 1;
 
+		class AnimationSources
+		{
+			class Hide_DUKE
+			{
+				initPhase = 1;
+			};
+		};
+
 		class complexGearbox
 		{
 			GearboxRatios[]=
@@ -460,6 +472,14 @@ class CfgVehicles
 
 		enginePower = 500;
 		peakTorque = 2450;
+
+		class AnimationSources
+		{
+			class Hide_DUKE
+			{
+				initPhase = 1;
+			};
+		};
 
 		class complexGearbox
 		{

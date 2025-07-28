@@ -1,4 +1,5 @@
 #include "config_macros.hpp"
+#include "config_magazines.hpp"
 
 class SensorTemplateActiveRadar;
 class SensorTemplateAntiRadiation;
@@ -35,12 +36,14 @@ class CfgPatches
 		{
 			"rhsusf_a2port_air2",
 			"RHS_US_A2_AirImport",
-			"ojog_Helos"
+			"ojog_Helos",
+			"rhsusf_c_airweapons"
 		};
 		units[]=
 		{
 			"13th_UH1Y",
-			"13th_MH60S_DAP",
+			"13th_MH60S_DAP_4X",
+			"13th_MH60S_DAP_2X",
 			"13th_MH60",
 			"13th_MH6",
 			"13th_AH6",
@@ -53,9 +56,33 @@ class CfgVehicles
 {
 	class Osean_MH6;
 	class Osean_AH6M;
+
 	class Osean_UH1Y;
-	class CUP_B_MH60L_DAP_4x_US;
-	class CUP_B_UH60S_USN;
+
+
+	class CUP_Uh60S_Base;
+	class CUP_MH60L_Dap_2x_Dynamic_Base: CUP_Uh60S_Base
+	{
+		class AnimationSources;
+	};
+	class CUP_B_MH60L_DAP_2x_US: CUP_MH60L_Dap_2x_Dynamic_Base 
+	{
+		class AnimationSources:AnimationSources{};
+	};	
+
+	class CUP_MH60L_Dap_4x_Dynamic_Base: CUP_Uh60S_Base
+	{
+		class AnimationSources;
+	};
+	class CUP_B_MH60L_DAP_4x_US: CUP_MH60L_Dap_4x_Dynamic_Base 
+	{
+		class AnimationSources:AnimationSources{};
+	};
+	class CUP_B_UH60S_USN: CUP_Uh60S_Base 
+	{
+		class AnimationSources;
+	};
+
 	class MainTurret;
 	class RHS_AH1Z_base;
 	class RHS_AH1Z:RHS_AH1Z_base
@@ -220,13 +247,25 @@ class CfgVehicles
 		{
 			"168Rnd_CMFlare_Chaff_Magazine"
 		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_fuselage_co.paa",
+			"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+		};
 		class textureSources {
 			class default {
 				displayName = "Default";
 				author = "CUP";
 				textures[] = {
-					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_fuselage_co.paa",
-					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_engine_co.paa",
+					"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_fuselage_co.paa",
+					"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_engine_co.paa",
 					"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 				};
 				factions[] =
@@ -236,9 +275,13 @@ class CfgVehicles
 			};
 		};
 
-		class Components: BaseComponents
+		class AnimationSources: AnimationSources 
 		{
+			class Navyclan_hide { initPhase = 1; };
+			class Navyclan2_hide { initPhase = 1; };
 		};
+
+		class Components: BaseComponents{};
 		class pilotCamera
 		{
 			class OpticsIn
@@ -314,9 +357,9 @@ class CfgVehicles
 		};
 
 
-	class 13th_MH60S_DAP: CUP_B_MH60L_DAP_4x_US
+	class 13th_MH60S_DAP_4X: CUP_B_MH60L_DAP_4x_US
 		{
-		displayName="[13th] MH-60S Knighthawk";
+		displayName="[13th] MH-60S Knighthawk (4x)";
 		scopeCurator=2;
 		scope=2;
 		author="Waylen";
@@ -331,8 +374,8 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_fuselage_co.paa",
-			"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_engine_co.paa",
+			"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_fuselage_DAP_co.paa",
+			"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_engine_co.paa",
 			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
 		class textureSources 
@@ -343,8 +386,8 @@ class CfgVehicles
 				author = "CUP";
 				textures[] = 
 				{
-					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_fuselage_co.paa",
-					"cup\airvehicles\cup_airvehicles_uh60\data\textures\mh60s_engine_co.paa",
+					"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_fuselage_DAP_co.paa",
+					"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_engine_co.paa",
 					"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 				};
 				factions[] =
@@ -353,6 +396,13 @@ class CfgVehicles
 				};
 			};
 		};
+
+		class AnimationSources: AnimationSources 
+		{
+			class Navyclan_hide { initPhase = 1; };
+			class Navyclan2_hide { initPhase = 1; };
+		};
+
 		lockDetectionSystem = "2+4+8";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
 		class components: BaseComponents
@@ -362,42 +412,15 @@ class CfgVehicles
 				UIPicture="\CUP\AirVehicles\CUP_AirVehicles_UH60\data\ui\CUP_UH60M_4_3DEN_CA.paa";
 				class presets
 				{
-					class Empty
+					class Default
 					{
-						displayName="$STR_EMPTY";
-						attachment[]={};
-					};
-					class AntiTank
-					{
-						displayName="$STR_A3_CFGMAGAZINES_TITAN_AT_DNS";
+						displayName="Default";
 						attachment[]=
 						{
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M"
-						};
-					};
-					class MultiRole
-					{
-						displayName="$STR_CUP_dn_Core_Pylon_Multirole";
-						attachment[]=
-						{
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M"
-						};
-					};
-					class Escort
-					{
-						displayName="$STR_CUP_dn_Core_Pylon_Escort";
-						attachment[]=
-						{
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M",
-							"CUP_PylonPod_19Rnd_Rocket_FFAR_M"
+							"PylonRack_4Rnd_ACE_Hellfire_AGM114L",
+							"FIR_Hydra_M247_P_19rnd_M",
+							"13th_M789",
+							"PylonRack_4Rnd_ACE_Hellfire_AGM114L"
 						};
 					};
 				};
@@ -411,7 +434,7 @@ class CfgVehicles
 							"RHS_HP_MELB_L",
 							"RHS_HP_FFAR_ARMY",
 							"UNI_SCALPEL",
-							"CUP_M789"
+							"13th_HEAVY_ROTARY"
 						};
 						attachment="CUP_PylonPod_19Rnd_Rocket_FFAR_M";
 						bay=-1;
@@ -434,6 +457,204 @@ class CfgVehicles
 					{
 						priority=5;
 						UIposition[]={0.58999997,0.34999999};
+						mirroredMissilePos=1;
+					};
+				};
+			};
+		};
+		weapons[]=
+		{
+			"CMFlareLauncher",
+			"Laserdesignator_mounted"
+		};
+		magazines[]=
+		{
+			"168Rnd_CMFlare_Chaff_Magazine",
+			"Laserbatteries"
+		};
+		class pilotCamera
+		{
+			class OpticsIn
+			{
+				class Wide
+				{
+					opticsDisplayName="WFOV";
+					initAngleX=0;
+					minAngleX=-180;
+					maxAngleX=180;
+					initAngleY=0;
+					minAngleY=-90;
+					maxAngleY=20;
+					initFov="(30 / 120)";
+					minFov="(30 / 120)";
+					maxFov="(30 / 120)";
+					directionStabilized=1;
+					visionMode[]=
+					{
+						"Normal",
+						"NVG",
+						"Ti"
+					};
+					thermalMode[]={0,1};
+					gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+					opticsPPEffects[]=
+					{
+						"OpticsCHAbera2",
+						"OpticsBlur2"
+					};
+				};
+				class Medium: Wide
+				{
+					opticsDisplayName="MFOV";
+					initFov="(6 / 120)";
+					minFov="(6 / 120)";
+					maxFov="(6 / 120)";
+					gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
+				};
+				class Narrow: Wide
+				{
+					opticsDisplayName="NFOV";
+					initFov="(2 / 120)";
+					minFov="(2 / 120)";
+					maxFov="(2 / 120)";
+					gunnerOpticsModel="\A3\Drones_F\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+				};
+				showMiniMapInOptics=0;
+				showUAVViewInOptics=0;
+				showSlingLoadManagerInOptics=0;
+			};
+			minTurn=-180;
+			maxTurn=180;
+			initTurn=0;
+			minElev=-80;
+			maxElev=90;
+			initElev=5;
+			maxXRotSpeed=1;
+			maxYRotSpeed=1;
+			maxMouseXRotSpeed=0.5;
+			maxMouseYRotSpeed=0.5;
+			pilotOpticsShowCursor=1;
+			controllable=1;
+			memoryPointGun="laser_start";
+			gunBeg="laser_end";
+			gunEnd="gunnerview_flir";
+		};
+		memoryPointDriverOptics="gunnerview_flir";
+
+		SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-60,Knighthawk,1)
+		};
+
+		class 13th_MH60S_DAP_2X: CUP_B_MH60L_DAP_2x_US
+		{
+		displayName="[13th] MH-60S Knighthawk (2x)";
+		scopeCurator=2;
+		scope=2;
+		author="Waylen";
+		faction="b_oseamarinecorps";
+		crew="B_BOseaMarineCorps_Helicopter_pilot_01";
+		editorSubcategory  = "EdSubcat_Helicopters";
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_fuselage_DAP_co.paa",
+			"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+		};
+		class textureSources 
+			{
+			class default 
+				{
+				displayName = "Default";
+				author = "CUP";
+				textures[] = 
+				{
+					"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_fuselage_DAP_co.paa",
+					"\x\13thMEF\addons\13th_air_vehicles\data\mh60s_engine_co.paa",
+					"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+				};
+				factions[] =
+				{
+					"Osea_F"
+				};
+			};
+		};
+
+		class AnimationSources: AnimationSources 
+		{
+			class Navyclan_hide { initPhase = 1; };
+			class Navyclan2_hide { initPhase = 1; };
+		};
+
+		lockDetectionSystem = "2+4+8";
+		incomingMissileDetectionSystem = "1+2+4+8+16";
+		class components: BaseComponents
+		{
+			class TransportPylonsComponent
+			{
+				UIPicture="\CUP\AirVehicles\CUP_AirVehicles_UH60\data\ui\CUP_UH60M_2_3DEN_CA.paa";
+				class presets
+				{
+					class Default
+					{
+						displayName="Default";
+						attachment[]=
+						{
+							"",
+							"FIR_Hydra_M247_P_19rnd_M",
+							"13th_M789",
+							""
+						};
+					};
+				};
+				class pylons
+				{
+					class pylons1
+					{
+						hardpoints[]={};
+						attachment="";
+						bay=-1;
+						priority=5;
+						UIposition[]={2,0.34999999};
+						turret[]={};
+					};
+					class pylons2: pylons1
+					{
+						hardpoints[]=
+						{
+							"RHS_HP_MELB",
+							"RHS_HP_MELB_L",
+							"RHS_HP_FFAR_ARMY",
+							"UNI_SCALPEL",
+							"13th_HEAVY_ROTARY"
+						};
+						attachment="CUP_PylonPod_19Rnd_Rocket_FFAR_M";
+						priority=4;
+						UIposition[]={0.079999998,0.40000001};
+					};
+					class pylons3: pylons1
+					{
+						hardpoints[]=
+						{
+							"RHS_HP_MELB",
+							"RHS_HP_MELB_L",
+							"RHS_HP_FFAR_ARMY",
+							"UNI_SCALPEL",
+							"13th_HEAVY_ROTARY"
+						};
+						attachment="CUP_PylonPod_19Rnd_Rocket_FFAR_M";
+						priority=4;
+						UIposition[]={0.56999999,0.40000001};
+						mirroredMissilePos=2;
+					};
+					class pylons4: pylons1
+					{
+						priority=5;
+						UIposition[]={2,0.34999999};
 						mirroredMissilePos=1;
 					};
 				};
@@ -622,7 +843,7 @@ class CfgVehicles
 								"RHS_HP_MELB",
 								"RHS_HP_MELB_L",
 								"RHS_HP_FFAR_ARMY",
-								"CUP_M789"
+								"13th_HEAVY_ROTARY"
 							};
 							UIposition[]		= {0.573,0.44};
 							maxweight			= 1200;
@@ -637,7 +858,7 @@ class CfgVehicles
 								"RHS_HP_MELB",
 								"RHS_HP_MELB_R",
 								"RHS_HP_FFAR_ARMY",
-								"CUP_M789"
+								"13th_HEAVY_ROTARY"
 							};
 							UIposition[]		= {0.10,0.44};
 							mirroredMissilePos	= 1;
@@ -901,6 +1122,7 @@ class CfgVehicles
 						hardpoints[]=
 						{
 							"RHS_HP_MELB_M134",
+							"13TH_MELB_GAU19R",
 							"RHS_HP_ATAS"
 						};
 						mirroredMissilePos=2;
