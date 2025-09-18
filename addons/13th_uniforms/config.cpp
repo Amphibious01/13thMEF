@@ -1,3 +1,5 @@
+#include "config_macros.hpp"
+
 class CfgPatches 
 {
     class 13th_uniforms
@@ -819,4 +821,49 @@ class cfgVehicles
 
 	//////////////////////////////////////////////////////////////////////////	
 
+};
+
+class XtdGearModels {
+	class CfgWeapons {
+
+		class 13th_FROG_uni {
+			label = "13th FROG Uniforms";
+			options [] = {"camo","sleeve","gloves"};
+			class camo 
+			{
+				alwaysSelectable = 1;
+				label = "CAMO";
+				values [] = {"WD","D"};		
+				class WD {label = "WOODLAND"; image=XTP(wd);};
+				class D {label = "DESERT"; image=XTP(d);}; 
+			};
+			class sleeve 
+			{
+				alwaysSelectable = 1;
+				label = "SLEEVES";
+				values [] = {"loose","rolled","tight"};
+				class loose	{label = "LOOSE";};
+				class rolled {label = "ROLLED";};
+				class tight {label = "TIGHT";};
+			};
+			class gloves  
+			{
+				alwaysSelectable = 1;
+				label = "SLEEVES";
+				values [] = {"OAKLEYGLOVES","MEKANIXGLOVES","KYLEGLOVES","NOGLOVES"};
+				class OAKLEYGLOVES {label = "OAKLEY";};
+				class MEKANIXGLOVES {label = "MEKANIX";};
+				class KYLEGLOVES {label = "KYLE";};
+				class NOGLOVES {label = "NONE";};			
+			};
+		};
+
+	};
+};
+
+class XtdGearInfos {
+	class CfgWeapons {
+		ALL_FROG_GI(WD)
+		ALL_FROG_GI(D)
+	};
 };

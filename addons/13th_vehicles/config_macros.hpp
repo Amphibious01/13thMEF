@@ -14,13 +14,19 @@
 
 #define BASICINV                                                                                                               \
 class TransportMagazines {                                                                                                     \
-    class _xx_rhs_mag_30Rnd_556x45_M855A1_Stanag { magazine = "rhs_mag_30Rnd_556x45_M855A1_Stanag"; count = 10;};              \
+    class _xx_rhs_mag_30Rnd_556x45_M855A1_Stanag { magazine = "rhs_mag_30Rnd_556x45_M855A1_Stanag"; count = 20;};              \
+    class _xx_CUP_200Rnd_TE4_Red_Tracer_556x45_M249 { magazine = "CUP_200Rnd_TE4_Red_Tracer_556x45_M249"; count = 7;};         \
+    class _xx_rhsusf_100Rnd_762x51_m62_tracer { magazine = "rhsusf_100Rnd_762x51_m62_tracer"; count = 5;};                     \
+    class _xx_rhs_mag_maaws_HEAT { magazine = "rhs_mag_maaws_HEAT"; count = 2;};                                               \
 };                                                                                                                             \
 class TransportWeapons {                                                                                                       \
     class _xx_rhs_weap_M136 { weapon = "rhs_weap_M136"; count = 2;};                                                           \
 };                                                                                                                             \
-class TransportItems {};                                                                                                       \
-class TransportBackpacks {};
+class TransportItems {                                                                                                         \
+    class _xx_ACE_bloodIV_500 { name = "ACE_bloodIV_500 "; count = 5;};                                                        \
+    class _xx_ACE_elasticBandage { name = "ACE_elasticBandage"; count = 30;};                                                  \
+};                                                                                                                             \
+class TransportBackpacks {};                                                                                                   
 
 #define HIGHROLLERINVENTORY                                                                                                   \
 class TransportMagazines {                                                                                                    \

@@ -25,6 +25,11 @@ class cfgWeapons
         displayname = "i hate naya";
         picture = "";
         model = "";
+		ctab_camera = 1;
+
+		ace_hearing_protection = 0.5;
+		ace_hearing_lowerVolume = 0.5;
+
         class ItemInfo: HeadgearItem
         {
             mass = 5;

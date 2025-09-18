@@ -14,7 +14,6 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"A3_Weapons_F",
-			"13_Osean_CustomBackpack"
 		};
 	};
 };
@@ -36,7 +35,7 @@ class cfgVehicles
 		mass=35;
 		hiddenSelectionsTextures[]=
 		{
-			"13_Osean_CustomBackpack\data\13th_eagleaii_coy_co.paa"
+			"\x\13thMEF\johnsonsbags\data\13th_eagleaii_coy_co.paa"
 		};
 	};
 	class TFAR_anprc155_coyote;
@@ -57,7 +56,7 @@ class cfgVehicles
 		tf_dialog="rt1523g_radio_dialog";
 		hiddenSelectionsTextures[]=
 		{
-			"13_Osean_CustomBackpack\data\13th_clf_nicecomm2_coyote_co.paa"
+			"\x\13thMEF\johnsonsbags\data\13th_clf_nicecomm2_coyote_co.paa"
 		};
 	};
 };
