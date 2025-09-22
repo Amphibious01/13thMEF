@@ -3,8 +3,7 @@ class CfgMagazines
 {
 
 	class CUP_PylonPod_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M;
-	class rhsusf_mag_gau19_melb_right;
-	class rhsusf_mag_gau19_melb_left;
+	class rhs_mag_gau19_air_base;
 
 	//////////////////////////////////////////// GUNS //////////////////////////////////////////////////////
 
@@ -20,7 +19,7 @@ class CfgMagazines
 		ammo = "13th_30x113_M789_HEDP";
 	};
 
-	class 13th_GAU19_left: rhsusf_mag_gau19_melb_left
+	class 13th_GAU19_left: rhs_mag_gau19_air_base
 	{
 		scope=2;
 		hardpoints[]=
@@ -32,9 +31,11 @@ class CfgMagazines
 
 		model="\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_GAU19_L";
 		ammo = "13th_127x99_SLAP";
+
+		initSpeed = 1800;
 	};
 
-	class 13th_GAU19_right: rhsusf_mag_gau19_melb_right
+	class 13th_GAU19_right: rhs_mag_gau19_air_base
 	{
 		scope=2;
 		hardpoints[]=
@@ -46,6 +47,8 @@ class CfgMagazines
 
 		model="\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_GAU19_R";
 		ammo = "13th_127x99_SLAP";
+
+		initSpeed = 1800;
 	};
 
 	//////////////////////////////////////////// ROCKETS //////////////////////////////////////////////////////

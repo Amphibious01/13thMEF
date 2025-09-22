@@ -12169,7 +12169,7 @@
 			class KICK_PASSENGERS	\
 			{	\
 				displayName="<t color='#730901'>Kick passengers</t>";	\
-				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 60)";	\
+				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 60) && ((getPosATL this select 2) <= 2)";	\
 				statement="this call OMDF_fnc_kickPassengers";	\
 				position="pilotcontrol";	\
 				radius=10;	\

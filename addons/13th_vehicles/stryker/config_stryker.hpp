@@ -238,11 +238,12 @@
 				displayName="<t color='#730901'>Clear Foliage</t>";	
 				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 5)";	
 				statement="this call OMDF_fnc_clearFoliageAction";	
-				radius=10;	
+				radius=50;	
 				priority=10.1;	
 				onlyforplayer=1;	
 				showWindow=0;	
 				hideOnUse=1;	
+				position = "camera";
 			};	
 		};
 		

@@ -255,7 +255,6 @@
 						{
 							hardpoints[]=
 							{
-
 								"13th_MELB_OUTBOARD"
 							};
 							priority=2;
@@ -271,7 +270,7 @@
 							hardpoints[]=
 							{
 								"RHS_HP_MELB_M134",
-								"RHS_HP_MELB_L"
+								"13TH_MELB_GAU19L"
 							};
 							UIposition[]={0.56199998,0.30000001};
 							priority=1;
