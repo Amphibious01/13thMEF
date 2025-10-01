@@ -14,6 +14,7 @@
 		editorSubcategory  = "EdSubcat_Helicopters";
 		weapons[]=
 		{
+			"rhs_weap_mastersafe",
 			"Laserdesignator_mounted",
 			"rhsusf_weap_CMDispenser_ANALE39"
 		};

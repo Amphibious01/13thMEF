@@ -11,6 +11,7 @@
 		class UserActions;
 		class MFD;
 		class EventHandlers;
+		class AnimationSources;
 	};
 
 		class 13th_MH6: Osean_MH6 
@@ -23,6 +24,7 @@
 			editorSubcategory  = "EdSubcat_Helicopters";
 			weapons[]=
 			{
+				"rhs_weap_mastersafe",
 				"Laserdesignator_mounted",
 				"rhsusf_weap_LWIRCM"
 			};
@@ -143,6 +145,7 @@
 			editorSubcategory  = "EdSubcat_Helicopters";
 			weapons[]=
 			{
+				"rhs_weap_mastersafe",
 				"Laserdesignator_mounted",
 				"rhsusf_weap_LWIRCM"
 			};
@@ -160,6 +163,7 @@
 				"rhsusf_mag_LWIRCM",
 				"rhsusf_mag_LWIRCM"
 			};
+
 			class pilotCamera
 			{
 				class OpticsIn
@@ -321,6 +325,17 @@
 					};
 				};
 			};
+
+			class AnimationSources: AnimationSources 
+			{
+				class Addcrosshair
+				{
+					source="user";
+					animPeriod=1;
+					initPhase=0;					
+				};
+			};
+
 			SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-6,Armed,2)
 
 			HMD

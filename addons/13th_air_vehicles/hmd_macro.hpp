@@ -12166,6 +12166,18 @@
 		defaultUserMFDvalues[]={0,0,0,0,1,0,0.2};	\
 		class UserActions: UserActions	\
 		{	\
+			class SAFEMODE {																																			\
+				displayName = "<t color='#00FF7F'>MASTERSAFE</t>";																										\
+				condition = "(call rhsusf_fnc_findPlayer) in this";																										\
+				statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";		\
+				position = "";																																			\
+				radius = 10;																																			\
+				priority = 10.5;																																		\
+				onlyforplayer = 1;																																		\
+				showWindow = 0;																																			\
+				shortcut="user13";																																		\
+				hideOnUse = 1;																																			\
+			};																																							\
 			class KICK_PASSENGERS	\
 			{	\
 				displayName="<t color='#730901'>Kick passengers</t>";	\
