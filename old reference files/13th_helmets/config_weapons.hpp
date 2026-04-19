@@ -105,22 +105,26 @@ class CfgWeapons {
     lwh_wd_headset_2 - blk
     */
 
-    CUSTOM_HGU(Cap) // example, produces a custom HGU56
+    CUSTOM_HGU_MASK(Cap) // example, produces a custom HGU56 w/ mask
+    CUSTOM_HGU_VISOR(Jello) // example where no patches are present
     CUSTOM_CVC(Michigan)
-    //CUSTOM_INF(Mixer,lwh_wd)
-    //CUSTOM_INF(Lemming,lwh_wd)
-    //CUSTOM_INF(Ouroboros,lwh_wd)
-    //CUSTOM_INF(Salazar,lwh_wd)
-    //CUSTOM_INF(Carver,lwh_wd)
-    //CUSTOM_INF(Johnson,lwh_wd)
-    //CUSTOM_INF(Xcom,lwh_wd)
-    //CUSTOM_INF(Ted,lwh_wd)
-    //CUSTOM_INF(Random,lwh_wd)
-    //CUSTOM_INF(Whiskey,lwh_wd)
-    //CUSTOM_INF(Westerwald,lwh_wd)
-    //CUSTOM_INF(Hollow,lwh_wd)
-    //CUSTOM_INF(Psy,lwh_wd)
-    //CUSTOM_INF(Q,lwh_wd)
-    //CUSTOM_INF(Oliver,lwh_wd)
-    //CUSTOM_INF(Boomer,lwh_wd)
+    CUSTOM_INF(Mixer,lwh_wd)
+    CUSTOM_INF(Lemming,lwh_wd)
+    CUSTOM_INF(Ouroboros,lwh_wd)
+    CUSTOM_INF(Salazar,lwh_wd)
+    CUSTOM_INF(Carver,lwh_wd)
+    CUSTOM_INF(Johnson,lwh_wd)
+    CUSTOM_INF(Xcom,lwh_wd)
+    CUSTOM_INF(Ted,lwh_wd)
+    CUSTOM_INF(Random,lwh_wd)
+    CUSTOM_INF(Whiskey,lwh_wd)
+    CUSTOM_INF(Westerwald,lwh_wd)
+    CUSTOM_INF(Hollow,lwh_wd)
+    CUSTOM_INF(Psy,lwh_wd)
+    CUSTOM_INF(Q,lwh_wd)
+    CUSTOM_INF(Oliver,lwh_wd)
+    CUSTOM_INF(Boomer,lwh_wd)
+    CUSTOM_INF(Markus,lwh_wd)
+    CUSTOM_INF(Tomo,lwh_wd)
+    CUSTOM_INF(Naya,lwh_wd)
 };
