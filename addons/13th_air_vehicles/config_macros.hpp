@@ -7,8 +7,7 @@
             spawner = #SPAWNERNAME; 									\
             vehicle=#VEHICLE; 											\
             type = #TYPE; 												\
-            cost = 0.5; 													\
-																		\
+            cost = 0.5; 												\
             priority = PRIORITY;										\
             };															\
         };																\
