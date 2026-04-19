@@ -20,7 +20,7 @@
 		author="Waylen";
 		faction="b_oseamarinecorps";
 		crew = "B_BOseaMarineCorps_Crewman_01";
-		waterResistenceCoef=0.0049999999;
+		waterResistenceCoef=0.000001;
 		waterResistance=0.1;
 		waterAngularDampingCoef=3;
 		engineShiftY=1;

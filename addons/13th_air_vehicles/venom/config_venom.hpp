@@ -3,6 +3,7 @@
 	{
 		class UserActions;
 		class MFD;
+		class ViewPilot;
 	};
 
 	class 13th_UH1Y: Osean_UH1Y
@@ -106,7 +107,9 @@
 						{
 							hardpoints[] = 
 							{
-								"13th_VENOM"
+								"13th_VENOM",
+								"13th_GAU19",
+								"RHS_HP_ATAS"
 							};
 							UIposition[]		= {0.573,0.44};
 							maxweight			= 1200;
@@ -118,7 +121,9 @@
 						{
 							hardpoints[] = 
 							{
-								"13th_VENOM"
+								"13th_VENOM",
+								"13th_GAU19",
+								"RHS_HP_ATAS"
 							};
 							attachment			= "13th_HYDRA_SMK_19RND_M";
 							UIposition[]		= {0.10,0.44};
@@ -128,7 +133,44 @@
 				};
     		};
 
-		HMD
+		bodyFrictionCoef = 0.75;
+
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_106_Pilot_Lynx_A.hpp"
+		// ^^^ HMD script
+
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_082_User_Actions_Default_Values.hpp"
+		class UserActions 
+		{
+			class SAFEMODE {																																			
+				displayName = "<t color='#00FF7F'>MASTERSAFE</t>";
+				condition = "(call rhsusf_fnc_findPlayer) in this";
+				statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position = "";
+				radius = 10;
+				priority = 10.5;
+				onlyforplayer = 1;
+				showWindow = 0;
+				shortcut="user13";
+				hideOnUse = 1;
+			};
+			class KICK_PASSENGERS
+			{
+				displayName="<t color='#730901'>Kick passengers</t>";	
+				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 60) && ((getPosATL this select 2) <= 2)";	
+				statement="this call OMDF_fnc_kickPassengers";	
+				position="pilotcontrol";	
+				radius=10;	
+				priority=10.1;	
+				onlyforplayer=1;	
+				showWindow=0;	
+				hideOnUse=1;	
+			};	
+			#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
+		};
 
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,UH-1Y,Default,1)
+		class ViewPilot: ViewPilot
+		{
+			initAngleX = 0;
 		};
+	};

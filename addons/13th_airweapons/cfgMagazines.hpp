@@ -4,6 +4,7 @@ class CfgMagazines
 
 	class CUP_PylonPod_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M;
 	class rhs_mag_gau19_air_base;
+	class CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M;
 
 	//////////////////////////////////////////// GUNS //////////////////////////////////////////////////////
 
@@ -47,6 +48,23 @@ class CfgMagazines
 
 		model="\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_GAU19_R";
 		ammo = "13th_127x99_SLAP";
+
+		initSpeed = 1800;
+	};
+
+	class 13th_GAU19_any: CUP_PylonPod_1200Rnd_TE1_Red_Tracer_GAU19A_M
+	{
+		scope=2;
+		hardpoints[]=
+		{
+            "13TH_GAU19"
+		};
+
+		pylonWeapon = "13th_GAU19";
+
+		model="\CUP\Weapons\CUP_Weapons_DynamicLoadout\GAU19A\CUP_Gau19_Any.p3d";
+		ammo = "13th_127x99_SLAP";
+		CUP_PilotControl=1;
 
 		initSpeed = 1800;
 	};
@@ -339,4 +357,26 @@ class CfgMagazines
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x";
 	};
 
+
+	////////////////////////////////////////////// AGM 122 ////////////////////////////////////////
+
+/*	class FIR_AGM88_P_1rnd_M;
+
+	class 13th_AGM122_1rnd: FIR_AGM88_P_1rnd_M
+	{
+		mass = 355;
+		displayName = "AGM-122 Sidearm";
+		displayNameShort = "ANTIRAD";
+		descriptionShort = "[13th] AGM-122 SIDEARM ANTI-RAD MISSILE";
+
+		model = "\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_heli_grey";
+
+		pylonWeapon = "13th_AGM122";
+		hardpoints [] = 
+		{
+			"13th_AGM122_hp"
+		};
+		ammo = "13th_AGM122_ammo";
+	};
+*/
 };

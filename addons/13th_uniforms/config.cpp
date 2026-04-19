@@ -352,7 +352,7 @@ class cfgVehicles
 		{
 			"x\13thMEF\addons\13th_uniforms\data\FROG_top_woodland.paa",
 			"XYI_USMC_FROG\data\Uni\C_USMC_Pants_MarpatWoodland_co.paa",
-			"XYI_SEAL_TACTIC_UNI\data\C_USMC_Boots_Coyote_co.paa"
+			"XYI_SEAL_TACTIC_UNI\data\ACU_Boots_Coyote_co.paa"
 		};
     };
 
@@ -371,7 +371,7 @@ class cfgVehicles
 		{
 	    	"x\13thMEF\addons\13th_uniforms\data\FROG_top_desert.paa",
 			"XYI_USMC_FROG\data\Uni\C_USMC_Pants_MarpatDesert_co.paa",
-			"XYI_SEAL_TACTIC_UNI\data\C_USMC_Boots_Coyote_co.paa"
+			"XYI_SEAL_TACTIC_UNI\data\ACU_Boots_Coyote_co.paa"
 		};
     };
 

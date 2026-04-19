@@ -124,7 +124,24 @@
 		{
 			class MainTurret: MainTurret
 			{	
-				HMD_AH1Z
+				#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_201_CPG.hpp"
+				class UserActions 
+				{
+					class SAFEMODE {																																			
+						displayName = "<t color='#00FF7F'>MASTERSAFE</t>";
+						condition = "(call rhsusf_fnc_findPlayer) in this";
+						statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+						position = "";
+						radius = 10;
+						priority = 10.5;
+						onlyforplayer = 1;
+						showWindow = 0;
+						shortcut="user13";
+						hideOnUse = 1;
+					};
+					#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
+				};
+
 				minElev=-85;
 				maxElev=20;
 				minTurn=-108;
@@ -180,36 +197,23 @@
 		lockDetectionSystem = "2+4+8";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
 
-//		defaultUserMFDvalues[] =
-//		{
-//			0.1,	// r
-//			1,		// g
-//			0.1,	// b
-//			1,		// alpha
-//			1, 		// user4 - Pilot Left MFD
-//			5, 		// user5 - Pilot Right MFD
-//			1, 		// user6 - Gunner Left MFD
-//			5, 		// user7 - Gunner Right MFD
-//			0, 		// user8 - Radar Mode - 0 ground, 1 air
-//			1, 		// user9 - Camera zoom
-//			0, 		// user10 - Weapon Mode
-//			0, 		// user11 - Turn Rate
-//			0, 		// user12 - Rotor speed
-//			0, 		// user13 - Engine 1 Power
-//			0, 		// user14 - Engine 2 Power
-//			3000, 	// user15 - Primary Hydraulic System
-//			0, 		// user16 - FCR Scan Line
-//			0,		// User17 - FCR Bearing
-//			0,		// User18 - FCR Elev
-//			0, 		// 19
-//			1,		// 20
-//			0,		// 21
-//			0,		// 22
-//			1,		// 23
-//			0,		// 24
-//			0.2		// 25
-//		};
-		HMD_AH1Z
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_103_Pilot_Comanche.hpp"
+		class UserActions
+		{
+			class SAFEMODE {																																			
+				displayName = "<t color='#00FF7F'>MASTERSAFE</t>";
+				condition = "(call rhsusf_fnc_findPlayer) in this";
+				statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position = "";
+				radius = 10;
+				priority = 10.5;
+				onlyforplayer = 1;
+				showWindow = 0;
+				shortcut="user13";
+				hideOnUse = 1;
+			};
+			#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
+		};
 		
 		class ViewPilot: ViewPilot
 		{

@@ -34,7 +34,7 @@
 	};
 
 	class 13th_MH60: CUP_B_UH60S_USN
-		{
+	{
 		displayName="[13th] MH-60 Seahawk";
 		scopeCurator=2;
 		scope=2;
@@ -42,6 +42,7 @@
 		faction="b_oseamarinecorps";
 		crew="B_BOseaMarineCorps_Helicopter_pilot_01";
 		editorSubcategory  = "EdSubcat_Helicopters";
+
 		weapons[]=
 		{
 			"rhs_weap_mastersafe",
@@ -66,6 +67,7 @@
 			"\x\13thMEF\addons\13th_air_vehicles\data\seahawk\mh60s_engine_co.paa",
 			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
+
 		class textureSources {
 			class default {
 				displayName = "Default";
@@ -168,13 +170,44 @@
 		lockDetectionSystem = "1+2+4+8+16";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
 
-		HMD
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_104_Pilot_Ghost_Hawk.hpp"
+		// ^^^ HMD script
+
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_082_User_Actions_Default_Values.hpp"
+		class UserActions: UserActions
+		{
+			class SAFEMODE {																																			
+				displayName = "<t color='#00FF7F'>MASTERSAFE</t>";
+				condition = "(call rhsusf_fnc_findPlayer) in this";
+				statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position = "";
+				radius = 10;
+				priority = 10.5;
+				onlyforplayer = 1;
+				showWindow = 0;
+				shortcut="user13";
+				hideOnUse = 1;
+			};
+			class KICK_PASSENGERS
+			{
+				displayName="<t color='#730901'>Kick passengers</t>";	
+				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 60) && ((getPosATL this select 2) <= 2)";	
+				statement="this call OMDF_fnc_kickPassengers";	
+				position="pilotcontrol";	
+				radius=10;	
+				priority=10.1;	
+				onlyforplayer=1;	
+				showWindow=0;	
+				hideOnUse=1;	
+			};	
+			#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
+		};
 
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-60,Seahawk,0)
 		};
 
 	class 13th_MH60S_DAP_4X: CUP_B_MH60L_DAP_4x_US
-		{
+	{
 		displayName="[13th] MH-60S Knighthawk (4x)";
 		scopeCurator=2;
 		scope=2;
@@ -212,6 +245,7 @@
 				};
 			};
 		};
+		model = "cup\airvehicles\cup_airvehicles_uh60\model\CUP_uh60m_b.p3d";
 
 		class AnimationSources: AnimationSources 
 		{
@@ -246,7 +280,9 @@
 					{
 						hardpoints[]=
 						{
-							"13th_HEAVY_ROTARY"
+							"13th_HEAVY_ROTARY",
+							"13th_GAU19",
+							"RHS_HP_ATAS"
 						};
 						attachment="13th_114L_4rnd";
 						bay=-1;
@@ -360,7 +396,61 @@
 
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-60,Knighthawk,1)
 
-		HMD
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_106_Pilot_Lynx_A.hpp"
+		// ^^^ HMD script
+
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_082_User_Actions_Default_Values.hpp"
+		class UserActions: UserActions 
+		{
+			class OpenDoors
+			{
+				userActionID=50;
+				displayName="$STR_DN_OUT_O_DOOR";
+				radius=2.5;
+				radiusView=0.2;
+				showIn3D=17;
+				available=0;
+				priority=0.5;
+				position="doors";
+				showWindow=1;
+				onlyForPlayer=1;
+				shortcut="";
+				condition="this animationPhase ""doors"" < 0.5 AND driver this == player AND Alive(this)";
+				statement="this animate [""doors"",1];";
+			};
+			class CloseDoors: OpenDoors
+			{
+				userActionID=53;
+				displayName="$STR_DN_OUT_C_DOOR";
+				condition="this animationPhase ""doors"" > 0.5 AND driver this == player AND Alive(this)";
+				statement="this animate [""doors"", 0]";
+			};
+			class SAFEMODE {																																			
+				displayName = "<t color='#00FF7F'>MASTERSAFE</t>";
+				condition = "(call rhsusf_fnc_findPlayer) in this";
+				statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position = "";
+				radius = 10;
+				priority = 10.5;
+				onlyforplayer = 1;
+				showWindow = 0;
+				shortcut="user13";
+				hideOnUse = 1;
+			};
+			class KICK_PASSENGERS
+			{
+				displayName="<t color='#730901'>Kick passengers</t>";	
+				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 60) && ((getPosATL this select 2) <= 2)";	
+				statement="this call OMDF_fnc_kickPassengers";	
+				position="pilotcontrol";	
+				radius=10;	
+				priority=10.1;	
+				onlyforplayer=1;	
+				showWindow=0;	
+				hideOnUse=1;	
+			};	
+			#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
+		};	
 
 		};
         
@@ -412,7 +502,7 @@
 
 		lockDetectionSystem = "2+4+8";
 		incomingMissileDetectionSystem = "1+2+4+8+16";
-		class components: BaseComponents
+		class Components: BaseComponents
 		{
 			class TransportPylonsComponent
 			{
@@ -446,7 +536,9 @@
 					{
 						hardpoints[]=
 						{
-							"13th_HEAVY_ROTARY"
+							"13th_HEAVY_ROTARY",
+							"13th_GAU19",
+							"RHS_HP_ATAS"
 						};
 						attachment="13th_HYDRA_HE_19RND_M";
 						priority=4;
@@ -456,7 +548,9 @@
 					{
 						hardpoints[]=
 						{
-							"13th_HEAVY_ROTARY"
+							"13th_HEAVY_ROTARY",
+							"13th_GAU19",
+							"RHS_HP_ATAS"
 						};
 						attachment="13th_M789";
 						priority=4;
@@ -555,6 +649,60 @@
 
 		SPAWNPADCONFIG(13th_rotary,13th Rotary,MH-60,Knighthawk,1)
 
-		HMD
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_106_Pilot_Lynx_A.hpp"
+		// ^^^ HMD script
 
+		#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_082_User_Actions_Default_Values.hpp"
+		class UserActions: UserActions
+		{
+			class OpenDoors
+			{
+				userActionID=50;
+				displayName="$STR_DN_OUT_O_DOOR";
+				radius=2.5;
+				radiusView=0.2;
+				showIn3D=17;
+				available=0;
+				priority=0.5;
+				position="doors";
+				showWindow=1;
+				onlyForPlayer=1;
+				shortcut="";
+				condition="this animationPhase ""doors"" < 0.5 AND driver this == player AND Alive(this)";
+				statement="this animate [""doors"",1];";
+			};
+			class CloseDoors: OpenDoors
+			{
+				userActionID=53;
+				displayName="$STR_DN_OUT_C_DOOR";
+				condition="this animationPhase ""doors"" > 0.5 AND driver this == player AND Alive(this)";
+				statement="this animate [""doors"", 0]";
+			};
+			class SAFEMODE {																																			
+				displayName = "<t color='#00FF7F'>MASTERSAFE</t>";
+				condition = "(call rhsusf_fnc_findPlayer) in this";
+				statement = "(call rhsusf_fnc_findPlayer) action ['SwitchWeapon', this, (call rhsusf_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position = "";
+				radius = 10;
+				priority = 10.5;
+				onlyforplayer = 1;
+				showWindow = 0;
+				shortcut="user13";
+				hideOnUse = 1;
+			};
+			class KICK_PASSENGERS
+			{
+				displayName="<t color='#730901'>Kick passengers</t>";	
+				condition="(player in [driver this, this turretUnit [0]]) && (alive this) && (speed this <= 60) && ((getPosATL this select 2) <= 2)";	
+				statement="this call OMDF_fnc_kickPassengers";	
+				position="pilotcontrol";	
+				radius=10;	
+				priority=10.1;	
+				onlyforplayer=1;	
+				showWindow=0;	
+				hideOnUse=1;	
+			};	
+			#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
 		};
+		
+	};

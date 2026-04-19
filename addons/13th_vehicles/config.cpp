@@ -10,6 +10,7 @@ class CfgPatches
 		requiredVersion=1;
 		requiredAddons[]=
 		{
+			"A3_Functions_F",
 			"CUP_WheeledVehicles_LAV25",
 			"rhsusf_c_m11xx",
 			"rhsusf_c_stryker",
@@ -50,10 +51,15 @@ class CfgPatches
 
 
 /// prevents AI from disembarking from immobilized tanks
-class Extended_InitPost_EventHandlers {
-  class Tank {
-    class tankIsNowBunker { init = "(_this select 0) allowCrewInImmobile true;"; };
-  };
+class Extended_InitPost_EventHandlers
+{
+	class Tank
+	{
+		class CrewInImmobile
+		{
+			init="(_this select 0) allowCrewInImmobile true;";
+		};
+	};
 };
 
 

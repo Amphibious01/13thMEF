@@ -178,7 +178,7 @@ class RscInGameUI
 
 class Extended_InitPost_EventHandlers {
   class Tank {
-    class 13th_UH1Y { init = "(_this select 0) allowCrewInImmobile true;"; };
+    class TankIsBunker { init = "(_this select 0) allowCrewInImmobile true;"; };
   };
 };
 
@@ -336,5 +336,7 @@ class CfgVehicles
 	#include "\x\13thMEF\addons\13th_air_vehicles\venom\config_venom.hpp"
 	#include "\x\13thMEF\addons\13th_air_vehicles\sea_stallion\config_seastallion.hpp"
 	#include "\x\13thMEF\addons\13th_air_vehicles\viper\config_viper.hpp"
+
+
 
 };

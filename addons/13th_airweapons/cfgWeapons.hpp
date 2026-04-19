@@ -7,13 +7,16 @@ class CfgWeapons
 	class ace_hellfire_launcher_L;
 	class ace_hellfire_launcher_N;
 	class RHS_weap_gau19;
+	class FIR_AGM88;
+	class MissileLauncher;
 
 	class 13th_GAU19: RHS_weap_gau19
 	{
 		magazines [] = 
 		{
 			"13th_GAU19_left",
-			"13th_GAU19_right"
+			"13th_GAU19_right",
+			"13th_GAU19_any"
 		};
 	};
 
@@ -27,7 +30,7 @@ class CfgWeapons
 
 	class 13th_HYDRA_HEAT: FIR_RKT_Launcher
 	{
-		dispersion = 0.01;
+		dispersion = 0.005;
 		magazines [] = 
 		{
 			"13th_HYDRA_HEAT_7RND_M",
@@ -39,7 +42,7 @@ class CfgWeapons
 
 	class 13th_HYDRA_HE: FIR_RKT_Launcher
 	{
-		dispersion = 0.01;
+		dispersion = 0.005;
 		magazines [] = 
 		{
 			"13th_HYDRA_HE_7RND_M",
@@ -88,4 +91,36 @@ class CfgWeapons
 		};
 	};
 
+/*	class 13th_AGM122: FIR_AGM88
+	{
+		displayName = "AGM-122";
+		displayNameMFDFormat = "%1 AGM-122";
+		descriptionShort = "ANTIRAD";
+		displayNameMagazine = "AGM-122";
+		shortNameMagazine = "AGM-122";
+
+		canLock = 2;
+		weaponLockSystem = 8;
+		minRange = 300;
+		maxRange = 8000;
+
+		modes[] = {"LoalDistance"};
+		class LoalDistance: MissileLauncher
+		{
+			textureType = "LOAL";
+			displayName = "PB";
+			minRange = 300;
+			minRangeProbab = 0.4;
+			midRange = 1000;
+			midRangeProbab = 0.95;
+			maxRange = 8000;
+			maxRangeProbab = 0.9;
+		};	
+
+		magazines[] = 
+		{
+			"13th_AGM122_1rnd"
+		};
+	};
+*/
 };

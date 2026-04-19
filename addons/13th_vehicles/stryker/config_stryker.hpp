@@ -148,7 +148,8 @@
                 "rhs_mag_400rnd_127x99_mag",
                 "rhs_mag_400rnd_127x99_mag",
                 "rhs_mag_400rnd_127x99_mag",
-                "rhs_mag_400rnd_127x99_mag"
+                "rhs_mag_400rnd_127x99_mag",
+				"rhsusf_mag_L8A3_16"
             };
             class OpticsIn 
             {
@@ -171,7 +172,7 @@
                     minMoveY = 0;
                     minMoveZ = 0;
                     thermalMode [] = {0,1};
-                    visionMode [] = {"Normal","TI"}; 						
+                    visionMode [] = {"Normal","NVG","TI"}; 						
 				};
            };
         };
@@ -371,6 +372,7 @@
 			onlyforplayer=1;	
 			showWindow=0;	
 			hideOnUse=1;	
+			position = "camera";
 		};	
 	};
 
@@ -387,7 +389,8 @@
                 "rhs_mag_400rnd_127x99_mag",
                 "rhs_mag_400rnd_127x99_mag",
                 "rhs_mag_400rnd_127x99_mag",
-                "rhs_mag_400rnd_127x99_mag"
+                "rhs_mag_400rnd_127x99_mag",
+				"rhsusf_mag_L8A3_16"
             };
             class OpticsIn 
             {
@@ -410,7 +413,7 @@
                     minMoveY = 0;
                     minMoveZ = 0;
                     thermalMode [] = {0,1};
-                    visionMode [] = {"Normal","TI"}; 						
+                    visionMode [] = {"Normal","NVG","TI"}; 						
 				};
            };
         };

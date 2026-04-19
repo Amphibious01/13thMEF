@@ -42,15 +42,15 @@ class CfgAmmo
 	class FIR_Hydra_M229_Rocket;
 	class 13th_HYDRA_HE_Rocket: FIR_Hydra_M229_Rocket
 	{
-		indirectHit = 140;
-		indirectHitRange = 25;
+		indirectHit = 400;
+		indirectHitRange = 15;
 		hit = 400;
 
-        ace_frag_metal = 450;
-        ace_frag_charge = 500;
+        ace_frag_metal = 650;
+        ace_frag_charge = 200;
         ace_frag_gurney_c = 2700;
         ace_frag_gurney_k = 1/2;
-        ace_frag_classes[] = {"ACE_frag_medium_HD"};
+        ace_frag_classes[] = {"ACE_frag_small","ACE_frag_small_HD"};
 
 		sound [] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
 
@@ -72,12 +72,12 @@ class CfgAmmo
 
 		submunitionAmmo = "smokeShellArty";
 		submunitionInitSpeed = 10;
-		submunitionParentSpeedCoef = 0.05;
+		submunitionParentSpeedCoef = 0.03;
 		submunitionInitialOffset [] = {0,0,-0.2};
         submunitionConeType[] = {"poissondisccenter",3};
         submunitionConeAngle = 10;
 
-		explosionEffects = "ExploAmmoExplosion";
+		explosionEffects = "NDS_WPExplosion";
 
 		sound [] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
 
@@ -177,5 +177,45 @@ class CfgAmmo
         };
 	};
 
+/*	class FIR_AGM88;
+	
+	class 13th_AGM122_ammo: FIR_AGM88
+	{
+		model				= "\A3\Weapons_F_Jets\Ammo\Missile_AA_08_fly_F";
+		proxyShape			= "\A3\Weapons_F_Jets\Ammo\Missile_AA_08_F";
+		effectsMissile		= "rhs_missile3";
+		soundHit[] = { "A3\Sounds_F\weapons\Rockets\explosion_missile_01", 3.1622777, 1, 1800 };
+		whistleDist			= 20;
 
+		hit					= 300;
+		indirectHit			= 300;
+		indirectHitRange	= 20;
+		explosionAngle		= 60;
+		fuseDistance		= 300;
+
+		missileLockCone = 360;
+		missileKeepLockedCone = 360;
+		missileLockMaxDistance = 8000;	
+		missileLockMinDistance = 100;
+		missileLockMaxSpeed = 800;	
+
+		cost = 800;
+		initTime = 0;
+		timeToLive = 50;
+		thrustTime = 8;
+		thrust = 390;
+		maneuvrability = 30;
+		simulationStep = 0.001;
+		sideAirFriction = 1;
+
+		weaponLockSystem = 0;
+		flightProfiles[] = { "Direct","LoalDistance"};		
+		class Direct{};
+		class LoalDistance : Direct
+		{
+			lockSeekDistanceFromParent = 300;
+		};			
+
+	};
+*/
 };

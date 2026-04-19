@@ -1,3 +1,5 @@
+//#include "config_macros.hpp"
+
 class CfgPatches 
 {
     class 13th_helmets 
@@ -16,7 +18,29 @@ class cfgWeapons
 {
 
     class H_HelmetB;
+  	class ItemInfo;
     class HeadgearItem; 
+	class rhsusf_hgu56p;
+	class rhsusf_hgu56p_green:rhsusf_hgu56p
+	{
+		class ItemInfo;
+	};
+	class rhsusf_hgu56p_visor_black:rhsusf_hgu56p
+	{
+		class ItemInfo;
+	};
+	class rhsusf_hgu56p_mask_green:rhsusf_hgu56p_green
+	{
+		class ItemInfo;
+	};
+	class rhsusf_hgu56p_visor_mask_green:rhsusf_hgu56p_mask_green
+	{
+		class ItemInfo;
+	};
+	class rhsusf_hgu56p_visor_mask_Empire_black:rhsusf_hgu56p
+	{
+		class ItemInfo;
+	};
 
     class 13th_baseHelmet: H_HelmetB 
     {
@@ -419,4 +443,95 @@ class cfgWeapons
 		};
 	};
 
+	////////////////////////////////////////// CUSTOM HELMETS //////////////////////////////////////////
+
+	class 13th_HGU_CAP: rhsusf_hgu56p_mask_green 
+	{
+		displayName = "[13] HGU-56 (CAP)";
+		hiddenSelectionsTextures [] =
+		{
+			"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_cap.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel = "rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_mask";
+			hiddenSelectionsTextures [] =
+			{
+				"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_cap.paa"
+			};			
+		};
+	};
+
+	class 13th_HGU_HOUSE: rhsusf_hgu56p_visor_mask_Empire_black 
+	{
+		displayName = "[13] HGU-56 (HOUSE)";
+		hiddenSelectionsTextures [] =
+		{
+			"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_house.paa",
+			"\rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\data\rhs_hgu56_patches_empire_co.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			hiddenSelectionsTextures [] =
+			{
+				"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_house.paa",
+				"\rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\data\rhs_hgu56_patches_empire_co.paa"
+			};			
+		};
+	};
+
+	class 13th_HGU_AJAX:rhsusf_hgu56p_visor_mask_green
+	{
+		scope = 2;
+		scopeArsenal = 2;
+		displayName = "[13] HGU-56 (AJAX)";
+		hiddenSelectionsTextures [] =
+		{
+			"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_ajax.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel = "rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor_mask";
+			hiddenSelectionsTextures [] =
+			{
+				"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_ajax.paa"
+			};			
+		};
+	};
+
+	class 13th_HGU_DOWNER:rhsusf_hgu56p_visor_mask_green
+	{
+		displayName = "[13] HGU-56 (DOWNER)";
+		hiddenSelectionsTextures [] =
+		{
+			"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_downer.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel = "rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor_mask";
+			hiddenSelectionsTextures [] =
+			{
+				"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_downer.paa"
+			};			
+		};
+	};
+
+	class 13th_HGU_RESIDENT: rhsusf_hgu56p_visor_black 
+	{
+		displayName = "[13] HGU-56 (RESIDENT)";
+		hiddenSelectionsTextures [] =
+		{
+			"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_resident.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel = "rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor";
+			hiddenSelectionsTextures [] =
+			{
+				"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_resident.paa"
+			};			
+		};
+	};
+
 };
+
