@@ -33,7 +33,7 @@ class CfgAmmo
         ace_frag_gurney_k = 1/2;
         ace_frag_classes[] = {"ACE_frag_small_HD"};
 
-		sound [] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
+		sound[] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
 
 		model = "\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
 		proxyShape = "\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
@@ -52,7 +52,7 @@ class CfgAmmo
         ace_frag_gurney_k = 1/2;
         ace_frag_classes[] = {"ACE_frag_small","ACE_frag_small_HD"};
 
-		sound [] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
+		sound[] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
 
 		model = "\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
 		proxyShape = "\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
@@ -73,13 +73,13 @@ class CfgAmmo
 		submunitionAmmo = "smokeShellArty";
 		submunitionInitSpeed = 10;
 		submunitionParentSpeedCoef = 0.03;
-		submunitionInitialOffset [] = {0,0,-0.2};
+		submunitionInitialOffset[] = {0,0,-0.2};
         submunitionConeType[] = {"poissondisccenter",3};
         submunitionConeAngle = 10;
 
 		explosionEffects = "NDS_WPExplosion";
 
-		sound [] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
+		sound[] = {"CUP\Weapons\CUP_Weapons_VehicleWeapons\data\sound\rocketLauncher_Shot21",3.16228,1};
 
 		model = "\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
 		proxyShape = "\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
@@ -134,7 +134,7 @@ class CfgAmmo
 		// submunitionAmmo = "13th_114N_warhead";
 		// submunitionInitSpeed = 0;
 		// submunitionParentSpeedCoef = 0;
-		// submunitionInitialOffset [] = {0,0,-0.2};
+		// submunitionInitialOffset[] = {0,0,-0.2};
         // submunitionConeType[] = {"poissondisccenter",1};
         // submunitionConeAngle = 1;
 

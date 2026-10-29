@@ -12,7 +12,7 @@ class CfgWeapons
 
 	class 13th_GAU19: RHS_weap_gau19
 	{
-		magazines [] = 
+		magazines[] = 
 		{
 			"13th_GAU19_left",
 			"13th_GAU19_right",
@@ -22,7 +22,7 @@ class CfgWeapons
 
 	class 13th_M230: CUP_Vacannon_M230_veh 
 	{
-		magazines [] =
+		magazines[] =
 		{
 			"13th_M789"
 		};
@@ -31,7 +31,7 @@ class CfgWeapons
 	class 13th_HYDRA_HEAT: FIR_RKT_Launcher
 	{
 		dispersion = 0.005;
-		magazines [] = 
+		magazines[] = 
 		{
 			"13th_HYDRA_HEAT_7RND_M",
 			"13th_HYDRA_HEAT_19RND_M",
@@ -43,7 +43,7 @@ class CfgWeapons
 	class 13th_HYDRA_HE: FIR_RKT_Launcher
 	{
 		dispersion = 0.005;
-		magazines [] = 
+		magazines[] = 
 		{
 			"13th_HYDRA_HE_7RND_M",
 			"13th_HYDRA_HE_19RND_M",
@@ -55,7 +55,7 @@ class CfgWeapons
 	class 13th_HYDRA_SMK: FIR_RKT_Launcher
 	{
 		dispersion = 0.1;
-		magazines [] = 
+		magazines[] = 
 		{
 			"13th_HYDRA_SMK_7RND_M",
 			"13th_HYDRA_SMK_19RND_M",
@@ -64,9 +64,21 @@ class CfgWeapons
 		};
 	};
 
+	class 13th_HYDRA_FLARE: FIR_RKT_Launcher
+	{
+		dispersion = 0.005;
+		magazines[] =
+			{
+				"13th_HYDRA_FLARE_7RND_M",
+				"13th_HYDRA_FLARE_19RND_M",
+				"13th_HYDRA_MELB_FLARE_7RND_M",
+				"13th_HYDRA_MELB_FLARE_19RND_M"
+			};
+	};
+
 	class 13th_114K: ace_hellfire_launcher
 	{
-		magazines [] =
+		magazines[] =
 		{
 			"13th_114K_4rnd",
 			"13th_114K_2rnd"
@@ -75,7 +87,7 @@ class CfgWeapons
 
 	class 13th_114N: ace_hellfire_launcher_N
 	{
-		magazines [] =
+		magazines[] =
 		{
 			"13th_114N_4rnd",
 			"13th_114N_2rnd"
@@ -84,12 +96,14 @@ class CfgWeapons
 
 	class 13th_114L: ace_hellfire_launcher_L
 	{
-		magazines [] =
+		magazines[] =
 		{
 			"13th_114L_4rnd",
 			"13th_114L_2rnd"
 		};
 	};
+
+
 
 /*	class 13th_AGM122: FIR_AGM88
 	{

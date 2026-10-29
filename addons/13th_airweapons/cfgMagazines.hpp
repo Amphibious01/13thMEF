@@ -11,7 +11,7 @@ class CfgMagazines
 	class 13th_M789: CUP_PylonPod_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M
 	{
 		displayName = "M230 Chaingun";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -75,6 +75,8 @@ class CfgMagazines
 	class FIR_Hydra_M229_P_19rnd_M; // HE
 	class FIR_Hydra_M247_P_7rnd_M;
 	class FIR_Hydra_M247_P_19rnd_M; // HEAT
+	class FIR_Hydra_M257_P_7rnd_M;
+	class FIR_Hydra_M257_P_19rnd_M; // FLARE
 
 	//////////////////////////////////////////// HEAT //////////////////////////////////////////////////////
 
@@ -84,7 +86,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HEAT";
 		descriptionShort = "[13th] M247 7x HEAT HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_green";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -99,7 +101,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HEAT";
 		descriptionShort = "[13th] M247 19x HEAT HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_green";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -114,7 +116,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HEAT";
 		descriptionShort = "[13th] M247 7x HEAT HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_MELB_OUTBOARD"
 		};
@@ -128,7 +130,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HEAT";
 		descriptionShort = "[13th] M247 19x HEAT HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_MELB_OUTBOARD"
 		};
@@ -144,7 +146,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HE";
 		descriptionShort = "[13th] M229 7x HE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_green";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -159,7 +161,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HE";
 		descriptionShort = "[13th] M229 19x HE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_green";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -174,7 +176,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HE";
 		descriptionShort = "[13th] M229 7x HE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_MELB_OUTBOARD"
 		};
@@ -188,7 +190,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA HE";
 		descriptionShort = "[13th] M229 19x HE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_MELB_OUTBOARD"
 		};
@@ -204,7 +206,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA SMOKE";
 		descriptionShort = "[13th] M274 7x SMOKE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_green";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -219,7 +221,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA SMOKE";
 		descriptionShort = "[13th] M274 19x SMOKE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_green";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_VENOM"
@@ -234,7 +236,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA SMOKE";
 		descriptionShort = "[13th] M229 7x SMOKE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_MELB_OUTBOARD"
 		};
@@ -248,7 +250,7 @@ class CfgMagazines
 		displayNameShort = "HYDRA SMOKE";
 		descriptionShort = "[13th] M274 19x SMOKE HYDRA DUMB ROCKETS";
 		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_MELB_OUTBOARD"
 		};
@@ -256,6 +258,63 @@ class CfgMagazines
 		ammo = "13th_HYDRA_SMK_Rocket";
 	};
 */
+
+
+	//////////////////////////////////////////// FLARE //////////////////////////////////////////////////////
+
+	class 13th_HYDRA_FLARE_7RND_M: FIR_Hydra_M257_P_7rnd_M
+	{
+		displayName = "M257 FLARE Hydra w/ LAU-131";
+		displayNameShort = "HYDRA FLARE";
+		descriptionShort = "[13th] M257 7x ILLUMINATION FLARE HYDRA";
+		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_green";
+		hardpoints[] =
+		{
+			"13th_HEAVY_ROTARY",
+			"13th_VENOM"
+		};
+		pylonWeapon = "13th_HYDRA_FLARE";
+		ammo = "FIR_Hydra_M257_Rocket";
+	};
+
+
+	class 13th_HYDRA_FLARE_19RND_M: FIR_Hydra_M229_P_19rnd_M
+	{
+		displayName = "M257 FLARE Hydra w/ LAU-61";
+		displayNameShort = "HYDRA FLARE";
+		descriptionShort = "[13th] M257 19x ILLUMINATION FLARE HYDRA";
+		count = 19;
+		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_green";
+		hardpoints[] =
+		{
+			"13th_HEAVY_ROTARY",
+			"13th_VENOM"
+		};
+		pylonWeapon = "13th_HYDRA_FLARE";
+		ammo = "FIR_Hydra_M257_Rocket";
+	};
+
+
+	class 13th_HYDRA_MELB_FLARE_7RND_M: FIR_Hydra_M257_P_7rnd_M
+	{
+		displayName = "M257 FLARE Hydra w/ LAU-131";
+		displayNameShort = "HYDRA FLARE";
+		descriptionShort = "[13th] M257 7x ILLUMINATION FLARE HYDRA";
+
+		model = "\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x";
+
+		hardpoints[] =
+		{
+			"13th_MELB_OUTBOARD"
+		};
+
+		pylonWeapon = "13th_HYDRA_FLARE";
+
+		// OUR projectile
+		ammo = "FIR_Hydra_M257_Rocket";
+	};
+
+
 	//////////////////////////////////////////// HELLFIRES //////////////////////////////////////////////////////
 
 	class PylonRack_4Rnd_ACE_Hellfire_AGM114K;
@@ -266,7 +325,7 @@ class CfgMagazines
 		descriptionShort = "[13th] AGM-114K SALH HEAT HELLFIRE";
 
 		pylonWeapon = "13th_114K";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY"
 		};
@@ -280,7 +339,7 @@ class CfgMagazines
 		descriptionShort = "[13th] AGM-114K SALH HEAT HELLFIRE";
 
 		pylonWeapon = "13th_114K";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_MELB_OUTBOARD",
@@ -299,7 +358,7 @@ class CfgMagazines
 		descriptionShort = "[13th] AGM-114N SALH THERMOBARIC HELLFIRE";
 
 		pylonWeapon = "13th_114N";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY"
 		};
@@ -313,7 +372,7 @@ class CfgMagazines
 		descriptionShort = "[13th] AGM-114N SALH THERMOBARIC HELLFIRE";
 
 		pylonWeapon = "13th_114N";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_MELB_OUTBOARD",
@@ -332,7 +391,7 @@ class CfgMagazines
 		descriptionShort = "[13th] AGM-114L RDR HEAT HELLFIRE";
 
 		pylonWeapon = "13th_114L";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY"
 		};
@@ -346,7 +405,7 @@ class CfgMagazines
 		descriptionShort = "[13th] AGM-114L RDR HEAT HELLFIRE";
 
 		pylonWeapon = "13th_114L";
-		hardpoints [] =
+		hardpoints[] =
 		{
 			"13th_HEAVY_ROTARY",
 			"13th_MELB_OUTBOARD",
@@ -372,7 +431,7 @@ class CfgMagazines
 		model = "\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_heli_grey";
 
 		pylonWeapon = "13th_AGM122";
-		hardpoints [] = 
+		hardpoints[] = 
 		{
 			"13th_AGM122_hp"
 		};

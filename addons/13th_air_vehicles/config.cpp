@@ -56,6 +56,7 @@ class CfgPatches
 			"RHS_US_A2_AirImport",
 			"ojog_Helos",
 			"rhsusf_c_airweapons",
+			"ttt_ch46"
 		};
 		units[]=
 		{
@@ -66,7 +67,8 @@ class CfgPatches
 			"13th_MH6",
 			"13th_AH6",
 			"13th_AH1Z",
-			"13th_CH53E"
+			"13th_CH53E",
+			"13th_CH46"
 		};
 	};
 };
@@ -174,6 +176,7 @@ class RscInGameUI
 			};
 		};
 	};
+	#include "\x\13thMEF\addons\13th_air_vehicles\viper\config_viper_tgp_ui.hpp"
 };
 
 class Extended_InitPost_EventHandlers {
@@ -330,7 +333,9 @@ class CfgVehicles
 			};
 		};
 	};
-	
+	class ttt_ch46d;
+
+	#include "\x\13thMEF\addons\13th_air_vehicles\seaknight\config_seaknight.hpp"
 	#include "\x\13thMEF\addons\13th_air_vehicles\seahawk\config_seahawk.hpp"
 	#include "\x\13thMEF\addons\13th_air_vehicles\littlebird\config_littlebird.hpp"
 	#include "\x\13thMEF\addons\13th_air_vehicles\venom\config_venom.hpp"

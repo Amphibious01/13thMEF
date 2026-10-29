@@ -96,6 +96,12 @@
 				initPhase = 1; 
 				source = "";
 			};
+			class Hide_FlirTurret
+			{
+				source = "user";
+				animPeriod = 0;
+				initPhase = 0;
+			};
 		};
 
 		class Components: BaseComponents{};

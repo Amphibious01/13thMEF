@@ -43,7 +43,7 @@
 				"rhsusf_mag_LWIRCM"
 			};
 
-			hiddenSelectionsTextures [] =
+			hiddenSelectionsTextures[] =
 			{
 				"\x\13thMEF\addons\13th_air_vehicles\data\littlebird\mh6_ext_co.paa"
 			};
@@ -200,7 +200,7 @@
 				"rhsusf_mag_LWIRCM"
 			};
 
-			hiddenSelectionsTextures [] =
+			hiddenSelectionsTextures[] =
 			{
 				"\x\13thMEF\addons\13th_air_vehicles\data\littlebird\mh6_ext_co.paa"
 			};

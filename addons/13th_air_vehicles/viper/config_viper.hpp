@@ -141,55 +141,7 @@
 					};
 					#include "\x\13thMEF\addons\13th_air_vehicles\hmds\cfg_HMD_AH64D_081_User_Action_ALL.hpp"
 				};
-
-				minElev=-85;
-				maxElev=20;
-				minTurn=-108;
-				maxTurn=108;
-				gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
-				gunnerOpticsEffect[] = {"TankCommanderOptics1"};
-				allowTabLock = 1;
-				class OpticsIn
-				{
-					class Wide
-					{
-						opticsDisplayName="W";
-						initAngleX=0;
-						minAngleX=-30;
-						maxAngleX=30;
-						initAngleY=0;
-						minAngleY=-120;
-						maxAngleY=120;
-						initFov=0.456;
-						minFov=0.456;
-						maxFov=0.456;
-						directionStabilized=0;
-						visionMode[]=
-						{
-							"Normal",
-							"Ti"
-						};
-						thermalMode[]={0,1};
-						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
-					};
-					class Medium: Wide
-					{
-						directionStabilized=0;
-						opticsDisplayName="M";
-						initFov=0.093000002;
-						minFov=0.093000002;
-						maxFov=0.093000002;
-						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_medium_F";
-					};
-					class Narrow: Medium
-					{
-						opticsDisplayName="N";
-						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_narrow_F";
-						initFov=0.028999999;
-						minFov=0.028999999;
-						maxFov=0.028999999;
-					};					
-				};
+				#include "\x\13thMEF\addons\13th_air_vehicles\viper\config_viper_tgp.hpp"
 			};
 		};
 

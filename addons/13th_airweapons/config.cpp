@@ -18,7 +18,7 @@ class CfgPatches
 		name="13th MEF Air Weapons";
 		author="13th Mod Team";
 		requiredVersion=1;
-		units [] = {};
+		units[] = {};
 		requiredAddons[]=
 		{
 			"rhsusf_c_airweapons",
@@ -30,7 +30,7 @@ class CfgPatches
 			"ace_hellfire",
 			"A3_Data_F_ParticleEffects"
 		};
-		magazines [] =
+		magazines[] =
 		{
 			"13th_M789",
 			"13th_GAU19_left",
@@ -49,9 +49,12 @@ class CfgPatches
 			"13th_114N_4rnd",
 			"13th_114N_2rnd",
 			"13th_114L_4rnd",
-			"13th_114L_2rnd"
+			"13th_114L_2rnd",
+			"13th_HYDRA_FLARE_7RND_M",
+			"13th_HYDRA_MELB_FLARE_7RND_M",
+			"13th_HYDRA_FLARE_19RND_M"
 		};
-		ammo [] =
+		ammo[] =
 		{
 			"13th_30x113_M789_HEDP",
 			"13th_HYDRA_HEAT_Rocket",
