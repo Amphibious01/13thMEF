@@ -18,7 +18,6 @@ class cfgWeapons
 {
 
     class H_HelmetB;
-  	class ItemInfo;
     class HeadgearItem; 
 	class rhsusf_hgu56p;
 	class rhsusf_hgu56p_green:rhsusf_hgu56p
@@ -445,7 +444,7 @@ class cfgWeapons
 
 	////////////////////////////////////////// CUSTOM HELMETS //////////////////////////////////////////
 
-	class 13th_HGU_BEANIE: rhsusf_hgu56p_mask_green 
+	class 13th_HGU_BEANIE: rhsusf_hgu56p_green
 	{
 		displayName = "[13] HGU-56 (BEANIE)";
 		hiddenSelectionsTextures[] =
@@ -454,11 +453,11 @@ class cfgWeapons
 		};
 		class ItemInfo: ItemInfo
 		{
-			uniformModel = "rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor_mask
-			hiddenSelectionsTextures[] =
+			uniformModel = "rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor_mask";
+			hiddenSelectionsTextures[] = 
 			{
 				"\x\13thMEF\addons\13th_helmets\data\hgu\helm_co_beanie.paa"
-			};			
+			};
 		};
 	};
 
